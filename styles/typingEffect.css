@@ -1,0 +1,46 @@
+.front-back {
+    font-size: 2.5vw;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    z-index: 2;
+    color: white;
+}
+
+.typed-text {
+    font-weight: normal;
+    color: #00FF90;
+}
+
+.cursor {
+    display: inline-block;
+    background-color: white;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+}
+
+.cursor.typing {
+    animation: none;
+}
+
+@keyframes blink {
+    0% {
+        background-color: white;
+    }
+
+    49% {
+        background-color: white;
+    }
+
+    50% {
+        background-color: transparent;
+    }
+
+    99% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: #00FF90;
+    }
+}
