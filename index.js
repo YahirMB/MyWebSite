@@ -102,9 +102,9 @@ class NavigationPage {
     let self = this;
     $(".nav-tab").each(function () {
       let id = $(this).attr("href");
-      let offsetTop = $(id).offset().top - self.tabContainerHeight;
+      let offsetTop = $(id).offsetTop - self.tabContainerHeight;
       let offsetBottom =
-        $(id).offset().top + $(id).height() - self.tabContainerHeight;
+        $(id).offsetTop + $(id).height() - self.tabContainerHeight;
       if (
         $(window).scrollTop() > offsetTop &&
         $(window).scrollTop() < offsetBottom
