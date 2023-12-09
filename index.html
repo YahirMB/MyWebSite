@@ -23,12 +23,13 @@
     <link rel="stylesheet" href="./styles/tecnologies.css">
     <link rel="stylesheet" href="./styles/projects.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./styles/experiences.css">
 
 </head>
 
 <body>
 
-    <sectio class="nav">
+    <section class="nav">
         <h1 class="name">Alexander Manjarrez</h1>
 
         <h1 class="front-back">Desarrollador
@@ -41,10 +42,10 @@
             <a class="nav-tab" href="#tab-projects">PROYECTOS</a>
             <a class="nav-tab" href="#tab-tecnologies">TECNOLÓGIAS</a>
             <a class="nav-tab" href="#tab-experience">EXPERIENCIA</a>
-            <a class="nav-tab" href="#tab-videos">VIDEOS</a>
+            <a class="nav-tab" href="#tab-contact">CONTACTO</a>
             <span class="nav-tab-slider"></span>
         </div>
-    </sectio>
+    </section>
     <main class="main">
         <section class="slider" id="tab-about">
             <h1 class="title">Acerca de mí</h1>
@@ -101,7 +102,8 @@
 
                     </div>
                     <div class="info-project-container">
-                        <p class="info-project info-active">En esta aplicacion se desarrollo con Angular,Ionic y el lenguaje de
+                        <p class="info-project info-active">En esta aplicacion se desarrollo con Angular,Ionic y el
+                            lenguaje de
                             Typescript, fue un proyecto escolor al igual que
                             "Daily-plan" y en lo que consiste esta es realizar compras de calzado
                         </p>
@@ -114,8 +116,6 @@
                             compras y en la parte administrativa pueda ver las ganacias y el control de los productos.
                         </p>
                     </div>
-
-
                 </div>
 
 
@@ -240,13 +240,71 @@
             </div>
 
         </section>
-        <section class="slider" id="tab-typescript">
-            <h1 class="title">TYPESCRIPT</h1>
-            <h2>giving you better tooling at any scale</h2>
+        <section class="slider" id="tab-experience">
+            <h1 class="title">Experiencia</h1>
+
+            <div style="display: grid; grid-template-columns: repeat(2,50%);">
+                <div>
+
+                    <h1 class="subtitle" style="text-align: start;">Uso de tecnologias</h1>
+                    <div class="experience-list">
+                    </div>
+                </div>
+                <div>
+
+                    <h1 class="experiences-title" style="text-align: start;">Empresa: <span
+                            class="experience-content">Softwaria</span></h1>
+                    <h1 class="experiences-title" style="text-align: start;">Puesto: <span
+                            class="experience-content">Desarrollador web</span></h1>
+                    <h1 class="experiences-title" style="text-align: start;">Tiempo: <span class="experience-content">1
+                            año y 4 meses como desarrollador</span></h1>
+                    <h1 class="experiences-title" style="text-align: start;">Actividades:
+                        <ul class="experience-content ">
+                            <li>Maquetado de paginas y aplicaciones web</li>
+                            <li>Consumo de Apis</li>
+                            <li>Mantemiento de software</li>
+                            <li>Diseño responsive</li>
+                            <li>Limpieza de codigo</li>
+                        </ul>
+                    </h1>
+
+
+                </div>
+            </div>
         </section>
-        <section class="slider" id="tab-videos">
-            <h1 class="title">VITE</h1>
-            <h2>a frontend build tool</h2>
+        <section class="slider" id="tab-contact" style="height: 100vh;">
+            <h1 class="title">Contactarme</h1>
+            <div>
+
+                <h2 class="subtitle">Puedes contactarme por estas plataformas</h2>
+
+                <ul class="wrapper">
+                    <li class="icon facebook">
+                        <span class="tooltip">Facebook</span>
+                        <a href="https://www.facebook.com/YahirManjarrez26/" target="_blank">
+                            <img src="./resources/icons/facebook-f.svg" />
+                        </a>
+                    </li>
+                    <li class="icon whatsapp">
+                        <span class="tooltip">Whatsapp</span>
+                        <a href="https://wa.me/4493645346" target="_blank">
+                            <img src="./resources/icons/whatsapp.svg" />
+                        </a>
+                    </li>
+                    <li class="icon email">
+                        <span class="tooltip">Email</span>
+                        <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=alexandermanjarrez18@gmail.com" target="_blank">
+                            <img src="./resources/icons/at-solid.svg" />
+                        </a>
+                    </li>
+                    <li class="icon github">
+                        <span class="tooltip">Github</span>
+                        <a href="https://github.com/YahirMB" target="_blank">
+                            <img src="./resources/icons/github.svg" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </section>
     </main>
     <canvas class="background"></canvas>
@@ -254,6 +312,7 @@
     <script src="./index.js"></script>
     <script src="./js/typingEffect.js"></script>
     <script src="./js/projectsCarousel.js"></script>
+    <script src="./js/experience.js"></script>
 </body>
 
 </html>

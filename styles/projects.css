@@ -48,25 +48,6 @@
     transition-timing-function: ease-in;
 }
 
-/* 
-.animation-in{
-    animation-name: loadImg;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-}
-
-
-@keyframes loadImg {
-    0%{
-        opacity: 0;
-    }
-    50%{
-        opacity: 0.5;
-    }
-    100%{
-        opacity: 1;
-    }
-} */
 
 .move-next {
     transform: translateX(-250px);
