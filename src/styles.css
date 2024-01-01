@@ -1,0 +1,185 @@
+:root {
+    /* colors */
+    --color-primario: #00FF90;
+    --color-green-100: #00ff91cc;
+    --color-secondary: #03c1da;
+    --color-white:#ffffff;
+    --color-title: #ffffff;
+
+    /* size of letter */
+    --text-size-70:70px;
+    --text-size-28:28px;
+    --text-size-25:25px;
+    --text-size-21:21px;
+    --text-size-16:16px;
+}
+
+body {
+    margin: 0;
+    font-family: 'ROBOTO';
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* navbar */
+.nav,
+.slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #000000;
+    text-align: center;
+    padding: 0 2em;
+}
+
+.nav {
+    height: 100vh;
+}
+
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    box-shadow: 20px 20px 50px rgba(12, 12, 12, 0.904);
+    background: #000000;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.nav-container--top-first {
+    position: fixed;
+    top: 75px;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.nav-container--top-second {
+    position: fixed;
+    top: 0;
+}
+
+.nav-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: var(--color-primario);
+    letter-spacing: 0.1rem;
+    transition: all 0.5s ease;
+    font-size: var(--text-size-28);
+}
+
+.nav-tab:hover {
+    color: white;
+    background: var(--color-primario);
+    transition: all 0.5s ease;
+}
+
+.nav-tab-slider {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primario);
+    transition: left 0.3s ease;
+}
+
+
+.name {
+    color: var(--color-white);
+    font-size: 80px;
+    letter-spacing: 0.3rem;
+    font-family: sans-serif;
+    z-index: 4;
+}
+
+.title {
+    font-size: var(--text-size-70);
+    letter-spacing: 0.3rem;
+    font-family: "ROBOTO", sans-serif;
+    font-weight: 300;
+    color: var(--color-primario);
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.subtitle {
+    font-size: var(--text-size-28);
+    color: var(--color-title);
+}
+
+.text {
+    font-size: var(--text-size-16);
+    letter-spacing: 0.1rem;
+    font-family: "ROBOTO", sans-serif;
+    font-weight: 300;
+    color: var(--color-title);
+    z-index: 4;
+    text-align: justify;
+}
+
+.background {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+
+/* Typing */
+.front-back {
+    font-size: 2.5vw;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    z-index: 2;
+    color: white;
+}
+
+.typed-text {
+    font-weight: normal;
+    color: #00FF90;
+}
+
+.cursor {
+    display: inline-block;
+    background-color: white;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+}
+
+.cursor.typing {
+    animation: none;
+}
+
+@keyframes blink {
+    0% {
+        background-color: white;
+    }
+
+    49% {
+        background-color: white;
+    }
+
+    50% {
+        background-color: transparent;
+    }
+
+    99% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: #00FF90;
+    }
+}
