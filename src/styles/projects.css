@@ -29,12 +29,8 @@
     margin-bottom: 15px;
 }
 
-.info-project-container {
-    background-color: rgb(255, 0, 0);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin-top: 150px;
+.info-project-container {   
+    position: relative;   
 }
 
 
@@ -42,16 +38,33 @@
     color: var(--color-white);
     position: absolute;
     opacity: 0;
-    bottom: 0px;
     transform: translateY(150px);
+    text-align: center;
 }
 
+.project-paragraph{
+    text-align: start;
+}
+
+.project-subtitle{
+    font-size: var(--text-size-28);
+    color: var(--color-title);
+    text-align: center;
+}
+
+.message-empty{
+    display: none;
+    color: var(--color-primario);
+}
+
+
 .info-active{
-    transform: translateY(0px);
+    transform: translateY(20px);
     opacity: 1;
     transition-duration: .5s;
     transition-timing-function: ease-in;
 }
+
 
 
 .move-next {

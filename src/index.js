@@ -50,6 +50,7 @@ class NavigationPage {
   }
 
   onTabClick(event, element) {
+
     event.preventDefault();
     let scrollTop =
       $(element.attr("href")).offset().top - this.tabContainerHeight + 1;
@@ -69,7 +70,7 @@ class NavigationPage {
   }
 
   checkHeaderPosition() {
-    const headerHeight = 75;
+    const headerHeight = 0;
     if ($(window).scrollTop() > headerHeight) {
       $(".nav-container").addClass("nav-container--scrolled");
     } else {
@@ -102,33 +103,37 @@ class NavigationPage {
   }
 
   findCurrentTabSelector(element) {
+   
     let newCurrentId;
     let newCurrentTab;
     let self = this;
     $(".nav-tab").each(function () {
-      let id = $(this).attr("href");
-      let offsetTop = $(id).offsetTop - self.tabContainerHeight;
-      let offsetBottom =
-        $(id).offsetTop + $(id).height() - self.tabContainerHeight;
+      let id = $(this).attr("href");    
+      let offsetTop = $(id)[0].offsetTop - self.tabContainerHeight;
+      let offsetBottom = $(id)[0].offsetTop + $(id).height() - self.tabContainerHeight;
+      
       if (
         $(window).scrollTop() > offsetTop &&
         $(window).scrollTop() < offsetBottom
       ) {
         newCurrentId = id;
-        newCurrentTab = $(this);
+        newCurrentTab = $(this);      
       }
     });
+
     if (this.currentId != newCurrentId || this.currentId === null) {
       this.currentId = newCurrentId;
       this.currentTab = newCurrentTab;
       this.setSliderCss();
     }
+
   }
 
   setSliderCss() {
     let width = 0;
     let left = 0;
     if (this.currentTab) {
+    
       width = this.currentTab.css("width");
       left = this.currentTab.offset().left;
     }
@@ -152,33 +157,33 @@ let textArrayIndex = 0;
 let charIndex = 0;
 
 function type() {
-    if (charIndex < textArray[textArrayIndex].length) {
-        if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, typingDelay);
-    }
-    else {
-        cursorSpan.classList.remove("typing");
-        setTimeout(erase, newTextDelay);
-    }
+  if (charIndex < textArray[textArrayIndex].length) {
+    if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  }
+  else {
+    cursorSpan.classList.remove("typing");
+    setTimeout(erase, newTextDelay);
+  }
 }
 
 function erase() {
-    if (charIndex > 0) {
-        if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, erasingDelay);
-    }
-    else {
-        cursorSpan.classList.remove("typing");
-        textArrayIndex++;
-        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-        setTimeout(type, typingDelay + 1100);
-    }
+  if (charIndex > 0) {
+    if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  }
+  else {
+    cursorSpan.classList.remove("typing");
+    textArrayIndex++;
+    if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+    setTimeout(type, typingDelay + 1100);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () { // On DOM Load initiate the effect
-    if (textArray.length) setTimeout(type, newTextDelay + 250);
+  if (textArray.length) setTimeout(type, newTextDelay + 250);
 });
