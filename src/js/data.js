@@ -56,3 +56,12 @@ export const projectsListData = [
         ]
     }
 ]
+
+export const experienceData = [
+	{ name: 'React', valueExperience: 50, color: '#007bff' },
+	{ name: 'JavaScript', valueExperience: 50, color: '#fff500' },
+	{ name: 'TypeScript', valueExperience: 20, color: '#0039ff' },
+	{ name: 'Angular', valueExperience: 20, color: '#ff0000' },
+	{ name: 'Mysql', valueExperience: 20, color: '#ff8d00' },
+	{ name: 'Nodejs', valueExperience: 25, color: '#04ff00' },
+]

@@ -24,8 +24,9 @@ const particles = Particles.init({
       breakpoint: 768,
       options: {
         color: ["#faebd7", "#03dac6", "#ff0266"],
-        maxParticles: 43,
-        connectParticles: false
+        maxParticles: 70,        
+        connectParticles: false,
+        size:0
       }
     }
   ]
@@ -103,21 +104,21 @@ class NavigationPage {
   }
 
   findCurrentTabSelector(element) {
-   
+
     let newCurrentId;
     let newCurrentTab;
     let self = this;
     $(".nav-tab").each(function () {
-      let id = $(this).attr("href");    
+      let id = $(this).attr("href");
       let offsetTop = $(id)[0].offsetTop - self.tabContainerHeight;
       let offsetBottom = $(id)[0].offsetTop + $(id).height() - self.tabContainerHeight;
-      
+
       if (
         $(window).scrollTop() > offsetTop &&
         $(window).scrollTop() < offsetBottom
       ) {
         newCurrentId = id;
-        newCurrentTab = $(this);      
+        newCurrentTab = $(this);
       }
     });
 
@@ -133,7 +134,7 @@ class NavigationPage {
     let width = 0;
     let left = 0;
     if (this.currentTab) {
-    
+
       width = this.currentTab.css("width");
       left = this.currentTab.offset().left;
     }
@@ -143,6 +144,28 @@ class NavigationPage {
 }
 
 new NavigationPage();
+
+//opne menu mobile 
+
+const btnMenu = $("#btnMenu");
+const btnMenuClose = $("#btnMenu-close");
+const menuContainer = $("#menu-mobile");
+
+
+btnMenu.on("click", (e) => {
+ 
+  btnMenu.css("display",'none');
+  btnMenuClose.css("display",'block'); 
+  menuContainer.addClass("menu-in");
+})
+
+btnMenuClose.on("click", (e) => {
+  btnMenu.css("display",'block');
+  btnMenuClose.css("display",'none');  
+
+  menuContainer.removeClass("menu-in");
+})
+
 
 //typing effect
 

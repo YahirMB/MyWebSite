@@ -41,7 +41,7 @@
 
 .fade {
     pointer-events: none;
-    background: linear-gradient(90deg, #000000, transparent 30%, transparent 70%, #000000);
+    background: linear-gradient(90deg, #0e0e0e, transparent 30%, transparent 70%, #0e0e0e);
     position: absolute;
     inset: 0;
 }
@@ -53,5 +53,18 @@
 
     100% {
         transform: translateX(-50%);
+    }
+}
+
+@media(max-width:425px) {
+    .tag-list {
+        width: 100%;
+    }
+
+    .tag{
+        width: 60px;
+    }
+    .tag img {      
+        height: 60px;
     }
 }

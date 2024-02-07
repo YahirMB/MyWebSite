@@ -31,6 +31,8 @@
 
 .info-project-container {   
     position: relative;   
+    height: 300px;
+    overflow: hidden;
 }
 
 
@@ -40,6 +42,7 @@
     opacity: 0;
     transform: translateY(150px);
     text-align: center;
+    bottom: 0;
 }
 
 .project-paragraph{
@@ -63,6 +66,7 @@
     opacity: 1;
     transition-duration: .5s;
     transition-timing-function: ease-in;
+    top: 0;
 }
 
 
@@ -196,4 +200,10 @@
 
 .prev {
     left: 70px;
+}
+
+@media(max-width:425px){
+    .page-container{
+        grid-template-columns: 1fr;
+    }
 }

@@ -58,7 +58,7 @@ $.each(projectsListData, (index, project) => {
 
     //projects' info
     const info = $(`
-    <div class="info-project ${index == 0 && 'info-active'}"> 
+    <div class="info-project text ${index == 0 && 'info-active'}"> 
         <span>Fecha del proyecto: ${project.startDate} a ${project.endDate}</span>
         <p class="project-paragraph">${project.description}</p>
         ${project.linkVideo &&

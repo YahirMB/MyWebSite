@@ -1,3 +1,7 @@
+.grid-container-esxperiences {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
 .experience-container {
     display: flex;
     align-items: center;
@@ -89,4 +93,20 @@
 .experience-content {
     font-size: var(--text-size-21);
     color:white;
+}
+
+.hidden-skills{
+    display: none;
+}
+
+@media (max-width: 425px) {
+    /*main*/
+    .grid-container-esxperiences{
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .experience-container{
+        flex: 1 1 100%;
+    }
 }

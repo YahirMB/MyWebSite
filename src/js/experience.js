@@ -1,16 +1,11 @@
+import { experienceData } from "./data";
+
 const slider = document.querySelector('#slider');
 const pct = document.querySelector('.pct');
 const pctIndicator = document.querySelector('#pct-ind')
 
 //React/Javascript/CSS/HTML/Angular/TypeScript/React-Native/Mysql/Node
-const dataExperience = [
-	{ name: 'React', valueExperience: 50, color: '#007bff' },
-	{ name: 'JavaScript', valueExperience: 50, color: '#fff500' },
-	{ name: 'TypeScript', valueExperience: 20, color: '#0039ff' },
-	{ name: 'Angular', valueExperience: 20, color: '#ff0000' },
-	{ name: 'Mysql', valueExperience: 20, color: '#ff8d00' },
-	{ name: 'Nodejs', valueExperience: 25, color: '#04ff00' },
-]
+
 
 const experiesList = $('.experience-list')
 
@@ -20,11 +15,11 @@ const progressCircle = (value, pctIndicator, progressBar, color) => {
 
 	pctIndicator.style = `stroke-dashoffset: ${p}; stroke:${color}`;
 
-	progressBar.style = ` background: linear-gradient(90deg,${color + ' ' + value}%, ${ color + ' '+value}%);`;
+	progressBar.style = ` background: linear-gradient(90deg,${color + ' ' + value}%, ${color + ' ' + value}%);`;
 };
 
-$.each(dataExperience, function () {
-	const createElement = $(`<div class="experience-container">
+$.each(experienceData, function (index, skill) {
+	const createElement = $(`<div class="experience-container ${index < 4 ? '' : 'hidden-skills'}">
 	<p class="experience-title">${this.name}</p>
 	<div class="progress-bar-container">
 		<div class="bar"></div>
@@ -52,4 +47,30 @@ $.each(dataExperience, function () {
 
 })
 
+// show more skills
+const showMoreSkills = $('#show-more-skills');
+let skillShow;
+let skillHidden
 
+showMoreSkills.on('click', (e) => {
+
+	let skills = $('.experience-container.hidden-skills');
+
+	if (skills.length == 0) {
+		skillHidden = skillShow;
+		showMoreSkills.text('Ver más')
+	} else {
+		skillShow = skills;
+		skillHidden = skillShow;
+		showMoreSkills.text('Ver menos')
+	}
+
+	
+
+	skillHidden.each(
+		(index, skill) => {
+			$(skill).toggleClass('hidden-skills');
+		}
+	)
+
+})
