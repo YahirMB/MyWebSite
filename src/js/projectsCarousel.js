@@ -14,7 +14,7 @@ let itemsCarrusel = $('.projects-carousel-container .carousel').children();
 let counter = 0;
 let projects = 0;
 
-const titles = ['World-shoes', 'Daily-plan', 'Cafe-uta', 'AWLGroup']
+
 
 
 
@@ -23,14 +23,14 @@ const titles = ['World-shoes', 'Daily-plan', 'Cafe-uta', 'AWLGroup']
 let carousel = $(".carousel"),
     currdeg = 0;
 
-$(".next").on("click", { d: "n" }, rotateScreenshot);
-$(".prev").on("click", { d: "p" }, rotateScreenshot);
+$(".next").on("click", { d: "n" },(e) => rotateScreenshot(e.data.d));
+$(".prev").on("click", { d: "p" }, (e) => rotateScreenshot(e.data.d));
 
-function rotateScreenshot(e) {
-    if (e.data.d == "n") {
+function rotateScreenshot(direction) {
+    if (direction == "n") {
         currdeg = currdeg - 60;
     }
-    if (e.data.d == "p") {
+    if (direction == "p") {
         currdeg = currdeg + 60;
     }
     carousel.css({
@@ -125,24 +125,48 @@ const changeScreenshotsOfProject = (screenshotsList) => {
 
     if (screenshotsList.length === 0) {
         console.log('no hay imagenes estará pronto')
-        $('#empty-carrucel').css({"display": "block"});
-        $('.projects-carousel-container').css({"display": "none"});
-        $('.prev').css({"display": "none"});
-        $('.next').css({"display": "none"});
-        
+        $('#empty-carrucel').css({ "display": "block" });
+        $('.projects-carousel-container').css({ "display": "none" });
+        $('.prev').addClass('hidden');
+        $('.next').addClass('hidden');
+
     } else {
 
-        $('#empty-carrucel').css({"display": "none"});
-        $('.projects-carousel-container').css({"display": "block"});
-        $('.prev').css({"display": "flex"});
-        $('.next').css({"display": "flex"});
+        $('#empty-carrucel').css({ "display": "none" });
+        $('.projects-carousel-container').css({ "display": "block" });
+        $('.prev').removeClass('hidden');
+        $('.next').removeClass('hidden');
 
-        $.each(screenshotsList, (index, project) => {        
-            $(itemsCarrusel[index]).find('img').attr('src',project)
+        $.each(screenshotsList, (index, project) => {
+            $(itemsCarrusel[index]).find('img').attr('src', project)
         })
     }
 }
 
+//move carousel with touch
+let touchstart;
+let touchmove = 0;;
+
+carousel.on('touchstart', (e) => {
+    touchstart = e.touches[0].clientX
+})
+
+carousel.on('touchmove', (e) => {
+    touchmove = e.touches[0].clientX
+})
+
+carousel.on('touchend', (e) => {
+   
+    if (touchmove == 0) return;
+
+    if (touchmove < touchstart) {
+        rotateScreenshot('n');
+        touchmove = 0;
+    } else {
+        rotateScreenshot('p');
+        touchmove = 0;
+    }
+});
 
 
 

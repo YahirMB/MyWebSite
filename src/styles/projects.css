@@ -1,5 +1,3 @@
-
-
 .container-carousel-small {
     width: 250px;
     overflow: hidden;
@@ -24,19 +22,19 @@
 }
 
 .small-card-title {
-    color: var(--color-primario); 
-    margin: 0; 
+    color: var(--color-primario);
+    margin: 0;
     margin-bottom: 15px;
 }
 
-.info-project-container {   
-    position: relative;   
+.info-project-container {
+    position: relative;
     height: 300px;
     overflow: hidden;
 }
 
 
-.info-project{
+.info-project {
     color: var(--color-white);
     position: absolute;
     opacity: 0;
@@ -45,23 +43,23 @@
     bottom: 0;
 }
 
-.project-paragraph{
+.project-paragraph {
     text-align: start;
 }
 
-.project-subtitle{
+.project-subtitle {
     font-size: var(--text-size-28);
     color: var(--color-title);
     text-align: center;
 }
 
-.message-empty{
+.message-empty {
     display: none;
     color: var(--color-primario);
 }
 
 
-.info-active{
+.info-active {
     transform: translateY(20px);
     opacity: 1;
     transition-duration: .5s;
@@ -102,7 +100,7 @@
 
 .carousel-small-previos {
     left: -25px;
-   display: none;
+    display: none;
 }
 
 .carousel-small-next {
@@ -134,7 +132,7 @@
     display: none;
 }
 
-.active-carousel{
+.active-carousel {
     display: block;
 }
 
@@ -202,8 +200,64 @@
     left: 70px;
 }
 
-@media(max-width:425px){
-    .page-container{
+.hidden{
+    display: none;
+}
+
+@media(max-width:425px) {
+    .page-container {
         grid-template-columns: 1fr;
+    }
+
+    .next,
+    .prev {
+        display: none;
+    }
+
+    .projects-carousel-container {
+        width: 120px;
+    }
+    
+    .item img {
+        width: 120px;
+        height: 300px;
+    }
+
+    .a {
+        transform: rotateY(0deg) translateZ(120px);
+        /* background: #ed1c24; */
+    }
+
+    .b {
+        transform: rotateY(60deg) translateZ(120px);
+        /* background: #0072bc; */
+    }
+
+    .c {
+        transform: rotateY(120deg) translateZ(120px);
+        /* background: #39b54a; */
+    }
+
+    .d {
+        transform: rotateY(180deg) translateZ(120px);
+        /* background: #f26522; */
+    }
+
+    .e {
+        transform: rotateY(240deg) translateZ(120px);
+        /* background: #630460; */
+    }
+
+    .f {
+        transform: rotateY(300deg) translateZ(120px);
+        /* background: #8c6239; */
+    }
+
+    .info-project-container{
+        height: auto;
+    }
+    .info-active {
+        position: relative;
+        margin-bottom: 20px;
     }
 }
