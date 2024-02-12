@@ -291,9 +291,15 @@ a {
     }
 
     .tab-mobile {
-        display: block;
-
+        display: block;            
+        color: var(--color-primario);
+        letter-spacing: 0.1rem;
+        transition: all 0.5s ease;
+        font-size: var(--text-size-28);
+        text-decoration: none;
+        
     }
+
 
     .btn-menu {
         /* background-color: #00FF90; */
