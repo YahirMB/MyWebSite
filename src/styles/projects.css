@@ -22,7 +22,8 @@
 }
 
 .small-card-title {
-    color: var(--color-primario);
+    color: white;
+    font-weight: 700;
     margin: 0;
     margin-bottom: 15px;
 }
@@ -202,6 +203,21 @@
 
 .hidden{
     display: none;
+}
+
+.pills-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tecnology-pill{
+    background-color:#0c9445;
+    color:white;
+    border-radius: 28px;
+    padding: 5px 10px;
+    border: 1px solid #11e056;
 }
 
 @media(max-width:425px) {

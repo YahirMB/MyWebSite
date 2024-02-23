@@ -23,7 +23,7 @@ let projects = 0;
 let carousel = $(".carousel"),
     currdeg = 0;
 
-$(".next").on("click", { d: "n" },(e) => rotateScreenshot(e.data.d));
+$(".next").on("click", { d: "n" }, (e) => rotateScreenshot(e.data.d));
 $(".prev").on("click", { d: "p" }, (e) => rotateScreenshot(e.data.d));
 
 function rotateScreenshot(direction) {
@@ -47,27 +47,43 @@ function rotateScreenshot(direction) {
 const smallCarrucelContainer = $('#smallCarruselProjects');
 const infoProjectSmall = $('#infoProjectSmall');
 
+projectsListData.forEach(
+    (project, index) => {
+        const card = $(`<div class="card" data-index=${index}>
+        <p class="small-card-title">${project.name}</p>
+        <img src="${project.logoUrl}" alt="icono-worldShoes" />
+        </div>`);
 
-$.each(projectsListData, (index, project) => {
-    const card = $(`<div class="card" data-index=${index}>
-                    <p class="small-card-title">${project.name}</p>
-                    <img src="${project.logoUrl}" alt="icono-worldShoes" />
-                </div>`);
+        smallCarrucelContainer.append(card);
 
-    smallCarrucelContainer.append(card);
+        let technologyListElemets = '' ;
+        
+        project.technologiesUsed.forEach(
+            techno => {
+                technologyListElemets += `<span class="tecnology-pill">${techno}</span>`
+            }
+        )
+        
 
-    //projects' info
-    const info = $(`
-    <div class="info-project text ${index == 0 && 'info-active'}"> 
-        <span>Fecha del proyecto: ${project.startDate} a ${project.endDate}</span>
-        <p class="project-paragraph">${project.description}</p>
-        ${project.linkVideo &&
-        `<a href="${project.linkVideo}">Clic para ver video</a>`
-        }
-    </div>`)
+        //projects' info
+        const info = $(`
+            <div class="info-project text ${index == 0 && 'info-active'}"> 
+            <span>Fecha del proyecto: ${project.startDate} a ${project.endDate}</span>
+            <p class="project-paragraph">${project.description}
+            ${project.linkVideo &&
+                `<a href="${project.linkVideo}">Clic para ver video</a>`
+            }
+            </p>
+            <div class="pills-container">
+            ${technologyListElemets}
+            </div>
+           
+            </div>`)
 
-    infoProjectSmall.append(info);
-})
+        infoProjectSmall.append(info);
+    }
+)
+
 
 let infoContainer = $('#infoProjectSmall');
 let infosProjects = infoContainer.children()
@@ -156,7 +172,7 @@ carousel.on('touchmove', (e) => {
 })
 
 carousel.on('touchend', (e) => {
-   
+
     if (touchmove == 0) return;
 
     if (touchmove < touchstart) {

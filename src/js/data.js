@@ -1,13 +1,22 @@
 export const projectsListData = [
     {
         name: 'DailyPlan',
-        description: ` Se desarrollo una aplicacion en react-native junto con el
+        description: ` Se desarrollo una aplicación en react-native junto con el
         lenguaje de Typescript
         con el fin de tener un agenda o un bloc de notas digital`,
         startDate: '15/09/2023',
         endDate: '10/01/2024',
         linkVideo: '',
         logoUrl: "./resources/png/logo_dailyplan.png",
+        technologiesUsed:[
+            'React-native',
+            'Javascript',
+            'Context',
+            'NodeJs',
+            'MySQL',
+            'AtomicDesign',
+            'Express', 
+        ],
         screenshotList: [
             "./resources/projects/dailyPlan/dailyplan_1.png",
             "./resources/projects/dailyPlan/dailyplan_2.png",
@@ -19,13 +28,23 @@ export const projectsListData = [
     },
     {
         name: 'Cafe-uta',
-        description: ` En este proyecto se realizo un aplicacion web de tipo punto de venta, en
+        description: ` En este proyecto se realizo un aplicación web de tipo punto de venta, en
         donde consiste realizar
         compras y en la parte administrativa pueda ver las ganacias y el control de los productos.`,
         startDate: '04/05/2023',
         endDate: '20/08/2023',
         linkVideo: 'https://www.youtube.com/watch?v=LZR2bQYWwyk',
         logoUrl: "./resources/png/logo_cafeUta.png",
+        technologiesUsed:[
+            'Reactjs',
+            'Javascript',
+            'Redux',
+            'C#',
+            '.Net',
+            'Entity-framework',
+            'Style-components',
+            'SQL server',
+        ],
         screenshotList: []
     },
     {
@@ -36,6 +55,11 @@ export const projectsListData = [
         endDate: '20/12/2022',
         linkVideo: 'https://youtu.be/jdYj8Slm3D4',
         logoUrl: null,
+        technologiesUsed:[
+            'Java',
+            'NetBeans',
+            'MySQL',            
+        ],
         screenshotList: []
     },
     {
@@ -46,6 +70,13 @@ export const projectsListData = [
         endDate: '20/08/2022',
         linkVideo: '',
         logoUrl: "./resources/png/logo_worldshoes.png",
+        technologiesUsed:[
+            'Angular',
+            'MongoDB',
+            'Typescript',
+            'Nodejs',
+            'Express',            
+        ],
         screenshotList: [
             "./resources/projects/WordlShoesImages/mobile (1).png",
             "./resources/projects/WordlShoesImages/mobile (2).png",
