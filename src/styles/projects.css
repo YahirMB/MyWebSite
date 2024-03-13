@@ -81,7 +81,6 @@
     transform: translateX(250px);
     transition-timing-function: ease-in;
     transition-duration: .5s;
-
 }
 
 .carousel-small-previos,
@@ -97,7 +96,17 @@
     position: absolute;
     color: var(--color-white);
     cursor: pointer;
+    /* box-shadow: 1px 1px 15px rgb(26, 26, 26); */
 }
+
+.carousel-small-next:active{
+    transform: scale(1.1,1.1)
+}
+
+.carousel-small-previos:active{
+    transform: scale(1.1,1.1)
+}
+
 
 .carousel-small-previos {
     left: -25px;
@@ -199,6 +208,10 @@
 
 .prev {
     left: 70px;
+}
+
+.prev:active,.next:active{
+    transform: scale(1.1,1.1);
 }
 
 .hidden{

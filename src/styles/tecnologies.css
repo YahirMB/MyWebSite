@@ -46,6 +46,10 @@
     inset: 0;
 }
 
+.tag img {      
+    height: 100px;
+}
+
 @keyframes loop {
     0% {
         transform: translateX(0);

@@ -10,7 +10,7 @@ export const projectsListData = [
         logoUrl: "./resources/png/logo_dailyplan.png",
         technologiesUsed:[
             'React-native',
-            'Javascript',
+            'Typescript',
             'Context',
             'NodeJs',
             'MySQL',
@@ -54,7 +54,7 @@ export const projectsListData = [
         startDate: '04/09/2022',
         endDate: '20/12/2022',
         linkVideo: 'https://youtu.be/jdYj8Slm3D4',
-        logoUrl: null,
+        logoUrl: './resources/png/awlgroup.png',
         technologiesUsed:[
             'Java',
             'NetBeans',

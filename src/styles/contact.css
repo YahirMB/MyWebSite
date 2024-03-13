@@ -87,6 +87,12 @@
   background: #333333;
   color: var(--color-white);
 }
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+  background: #1877F2;
+  color: var(--color-white);
+}
 
 
 .icon img {
