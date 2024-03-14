@@ -24,9 +24,9 @@ const particles = Particles.init({
       breakpoint: 768,
       options: {
         color: ["#faebd7", "#03dac6", "#ff0266"],
-        maxParticles: 70,        
+        maxParticles: 70,
         connectParticles: false,
-        size:0
+        size: 0
       }
     }
   ]
@@ -103,6 +103,8 @@ class NavigationPage {
     }
   }
 
+  //TODO: remover this component and create a new where scroll is able to listen to the section
+
   findCurrentTabSelector(element) {
 
     let newCurrentId;
@@ -112,7 +114,6 @@ class NavigationPage {
       let id = $(this).attr("href");
       let offsetTop = $(id)[0].offsetTop - self.tabContainerHeight;
       let offsetBottom = $(id)[0].offsetTop + $(id).height() - self.tabContainerHeight;
-
       if (
         $(window).scrollTop() > offsetTop &&
         $(window).scrollTop() < offsetBottom
@@ -145,25 +146,33 @@ class NavigationPage {
 
 new NavigationPage();
 
-//opne menu mobile 
+//open menu mobile 
 
-const btnMenu = $("#btnMenu");
-const btnMenuClose = $("#btnMenu-close");
-const menuContainer = $("#menu-mobile");
+const $btnMenu = $("#btnMenu");
+const $btnMenuClose = $("#btnMenu-close");
+const $menuContainer = $("#menu-mobile");
 
 
-btnMenu.on("click", (e) => {
- 
-  btnMenu.css("display",'none');
-  btnMenuClose.css("display",'block'); 
-  menuContainer.addClass("menu-in");
+$btnMenu.on("click", (e) => {
+
+  $btnMenu.css("display", 'none');
+  $btnMenuClose.css("display", 'block');
+  $menuContainer.addClass("menu-in");
 })
 
-btnMenuClose.on("click", (e) => {
-  btnMenu.css("display",'block');
-  btnMenuClose.css("display",'none');  
+$btnMenuClose.on("click", (e) => {
+  $btnMenu.css("display", 'block');
+  $btnMenuClose.css("display", 'none');
 
-  menuContainer.removeClass("menu-in");
+  $menuContainer.removeClass("menu-in");
+})
+
+$menuContainer.on("click", (e) => {
+  if (e.target === $menuContainer) return;
+
+  $menuContainer.removeClass("menu-in");
+  $btnMenuClose.css("display", 'none');
+  $btnMenu.css("display", 'block');
 })
 
 

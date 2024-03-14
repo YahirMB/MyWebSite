@@ -87,6 +87,7 @@
   background: #333333;
   color: var(--color-white);
 }
+
 .wrapper .linkedin:hover,
 .wrapper .linkedin:hover .tooltip,
 .wrapper .linkedin:hover .tooltip::before {
@@ -97,4 +98,11 @@
 
 .icon img {
   height: 20px;
+}
+
+@media (max-width: 320px) {
+
+  .wrapper .icon {
+    margin: 5px;
+  }
 }
