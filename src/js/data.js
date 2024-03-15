@@ -18,12 +18,12 @@ export const projectsListData = [
             'Express', 
         ],
         screenshotList: [
-            "./resources/projects/dailyPlan/dailyplan_1.png",
-            "./resources/projects/dailyPlan/dailyplan_2.png",
-            "./resources/projects/dailyPlan/dailyplan_3.png",
-            "./resources/projects/dailyPlan/dailyplan_4.png",
-            "./resources/projects/dailyPlan/dailyplan_5.png",
-            "./resources/projects/dailyPlan/dailyplan_6.png",
+            "./resources/projects/dailyPlan/dailypla_1.jpg",
+            "./resources/projects/dailyPlan/dailypla_2.jpg",
+            "./resources/projects/dailyPlan/dailypla_3.jpg",
+            "./resources/projects/dailyPlan/dailypla_4.jpg",
+            "./resources/projects/dailyPlan/dailypla_5.jpg",
+            "./resources/projects/dailyPlan/dailypla_6.jpg",
         ]
     },
     {

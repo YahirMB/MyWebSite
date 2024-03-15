@@ -77,11 +77,7 @@ class NavigationPage {
     } else {
       $(".nav-container").removeClass("nav-container--scrolled");
     }
-    let offset =
-      $(".nav").offset().top +
-      $(".nav").height() -
-      this.tabContainerHeight -
-      headerHeight;
+    let offset = $(".nav").offset().top + $(".nav").height() - this.tabContainerHeight - headerHeight;
     if (
       $(window).scrollTop() > this.lastScroll &&
       $(window).scrollTop() > offset
