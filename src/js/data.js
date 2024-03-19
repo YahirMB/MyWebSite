@@ -1,13 +1,15 @@
 export const projectsListData = [
     {
+        id:1,
         name: 'DailyPlan',
-        description: ` Se desarrollo una aplicación en react-native junto con el
-        lenguaje de Typescript
-        con el fin de tener un agenda o un bloc de notas digital`,
+        description: `Es una aplicación que desarrolle solo como hobby y para repasar 
+        conocimientos aprendidos en cursos tomandos,la aplicación consta de tener un 
+        bloc de notas o agenda que te permita recordar cosas o fechas importante.`,
         startDate: '15/09/2023',
         endDate: '10/01/2024',
         linkVideo: '',
         logoUrl: "./resources/png/logo_dailyplan.png",
+        monologoUrl:'./resources/logos/monologo_dailyplan.png',
         technologiesUsed:[
             'React-native',
             'Typescript',
@@ -27,14 +29,16 @@ export const projectsListData = [
         ]
     },
     {
+        id:2,
         name: 'Cafe-uta',
-        description: ` En este proyecto se realizo un aplicación web de tipo punto de venta, en
+        description: `En este proyecto se realizo un aplicación web de tipo punto de venta, en
         donde consiste realizar
-        compras y en la parte administrativa pueda ver las ganacias y el control de los productos.`,
+        compras y en la parte administrativa pueda ver las ganancias y el control de los productos.`,
         startDate: '04/05/2023',
         endDate: '20/08/2023',
         linkVideo: 'https://www.youtube.com/watch?v=LZR2bQYWwyk',
         logoUrl: "./resources/png/logo_cafeUta.png",
+        monologoUrl:'./resources/logos/monologo_cafeuta.png',
         technologiesUsed:[
             'Reactjs',
             'Javascript',
@@ -48,13 +52,16 @@ export const projectsListData = [
         screenshotList: []
     },
     {
+        id:3,
         name: 'AWLGroup',
-        description: `  En este proyecto se realizo un aplicacion de escritorio en el lenguaje Java con el IDE de NetBeans. Consiste en control y gestión de aduanas
-        y todo el flujo del trabajo que conlleva a registar una aduana.`,
+        description: `Realice una aplicacion de escritorio con el lenguaje java y neatbeans esa aplicacion consistía 
+        en admininistrar y controlar registro de aduadas  
+        para los cliente en el entorno de logistica, este proyecto fue de mis practicas profesionales `,
         startDate: '04/09/2022',
         endDate: '20/12/2022',
         linkVideo: 'https://youtu.be/jdYj8Slm3D4',
         logoUrl: './resources/png/awlgroup.png',
+        monologoUrl:'./resources/logos/monologo_awlgroup.png',
         technologiesUsed:[
             'Java',
             'NetBeans',
@@ -63,13 +70,15 @@ export const projectsListData = [
         screenshotList: []
     },
     {
+        id:4,
         name: 'WorldShoes',
-        description: ` En esta aplicacion se desarrollo con Angular,Ionic y el
-        lenguaje de Typescript, fue un proyecto escolor al igual que "Daily-plan" y en lo que consiste esta es realizar compras de calzado`,
+        description: `World-shoes desarrolle este proyecto con otros 2 compañeros en donde
+        este proyecto es tipo E-commerce donde se hacía todo un CRUD Registar productos, comprar productos. `,
         startDate: '04/05/2022',
         endDate: '20/08/2022',
         linkVideo: '',
         logoUrl: "./resources/png/logo_worldshoes.png",
+        monologoUrl:'./resources/logos/monologo_worldshoes.png',
         technologiesUsed:[
             'Angular',
             'MongoDB',

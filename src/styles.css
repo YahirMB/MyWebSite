@@ -226,15 +226,20 @@ a {
     display: none;
 }
 
-.show-more{ 
+.show-more{
     border: none;
     padding: 8px 8px;
     color: #ffffff;
     margin-top: 15px;
-    text-align: center;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 16px;
+    /* font-weight: bold; */
+    width: max-content;
+    margin: auto;
     cursor: pointer;
+}
+
+.show-more:hover{
+    color: var(--color-primario);
 }
 
 @media (max-width: 425px) {
@@ -291,13 +296,13 @@ a {
     }
 
     .tab-mobile {
-        display: block;            
+        display: block;
         color: var(--color-primario);
         letter-spacing: 0.1rem;
         transition: all 0.5s ease;
         font-size: var(--text-size-28);
         text-decoration: none;
-        
+
     }
 
 

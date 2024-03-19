@@ -1,11 +1,15 @@
 import { projectsListData } from "./data";
 
 //containers
-let titleProject = $('#title-project');
+let $titleProject = $('#title-project');
 
 //children
 let itemsCarrusel = $('.projects-carousel-container .carousel').children();
 
+const elementesIdDicionary = {
+    projectsContainer : '#smallCarruselProjects',
+    projectParagraphContainer:'#projectParagraph'
+}
 
 //counters
 let counter = 0;
@@ -37,14 +41,15 @@ function rotateScreenshot(direction) {
 
 //SmallCarrucel
 
-const smallCarrucelContainer = $('#smallCarruselProjects');
-const infoProjectSmall = $('#infoProjectSmall');
+const smallCarrucelContainer = $(elementesIdDicionary.projectsContainer);
+const $projectParagraph = $(elementesIdDicionary.projectParagraphContainer);
 
 projectsListData.forEach(
     (project, index) => {
-        const card = $(`<div class="card" data-index=${index}>
+        const card = $(`<div class="card ${index ==  0 ? "project-selected":''}" data-index=${project.id}>
         <p class="small-card-title">${project.name}</p>
-        <img src="${project.logoUrl}" alt="icono-worldShoes" />
+        <img class="project-logo" src="${project.logoUrl}" alt="icono-worldShoes" />
+        <img class="project-monologo" src="${project.monologoUrl}" alt="icono-worldShoes" />
         </div>`);
 
         smallCarrucelContainer.append(card);
@@ -78,59 +83,49 @@ projectsListData.forEach(
 )
 
 
-let infoContainer = $('#infoProjectSmall');
-let infosProjects = infoContainer.children()
-$('.carousel-small-previos').on('click', { d: "p" }, changeProject)
-$('.carousel-small-next').on('click', { d: "n" }, changeProject)
+$('.card').each(
+    (index,card) => $(card).on('click',(e) => {
+        const $element = $(e.target.closest('.card'));
+        const $projectSelectedOld = $('.project-selected');
 
+        $projectSelectedOld.removeClass('project-selected');
+        $element.addClass('project-selected');
 
-function changeProject(e) {
-    if (e.data.d == "n") {
-        counter -= 250;
-        projects += 1;
-    }
+        changeProject($element.data('index'));
 
-    if (e.data.d == "p") {
-        counter += 250;
-        projects -= 1;
-    }
-
-    titleProject.text(projectsListData[projects].name)
-
-
-    //elemina la clase a todas los elementos
-    infosProjects.each(function () {
-        $(this).removeClass('info-active');
     })
-
-    //le agrega el que esta activo
-    $(infosProjects[projects]).addClass('info-active');
+)
 
 
-    if (projects == 0) {
-        $('.carousel-small-previos').css({ "display": "none" })
-    } else if (projects == projectsListData.length - 1) {
-        $('.carousel-small-next').css({ "display": "none" })
-    } else {
-        $('.carousel-small-previos').css({ "display": "flex" })
-        $('.carousel-small-next').css({ "display": "flex" })
-    }
-
-    smallCarrucelContainer.css({
-        "transform": "translateX(" + counter + "px)",
-        "transition-timing-function": "ease-in",
-        "transition-duration": ".5s",
-    });
+// $('.carousel-small-previos').on('click', { d: "p" }, changeProject)
+// $('.carousel-small-next').on('click', { d: "n" }, changeProject)
 
 
-    changeScreenshotsOfProject(projectsListData[projects].screenshotList)
+const changeProject = (projectId) =>  {
+    const project = projectsListData.find(project => project.id === projectId);
+
+    changeScreenshotsOfProject(project.screenshotList);
+    changeProjectInfo(project)
 }
 
 
+/**
+ * 
+ * @param {project} project 
+ */
+
+const changeProjectInfo = (project) => {
+    $titleProject.text(project.name);
+    $projectParagraph.text(project.description)
+
+}
+
+/**
+ * 
+ * @param {Array<Url>} screenshotsList 
+ */
 
 const changeScreenshotsOfProject = (screenshotsList) => {
-
-
     if (screenshotsList.length === 0) {
         $('#empty-carrucel').css({ "display": "block" });
         $('.projects-carousel-container').css({ "display": "none" });
@@ -138,7 +133,6 @@ const changeScreenshotsOfProject = (screenshotsList) => {
         $('.next').addClass('hidden');
 
     } else {
-
         $('#empty-carrucel').css({ "display": "none" });
         $('.projects-carousel-container').css({ "display": "block" });
         $('.prev').removeClass('hidden');

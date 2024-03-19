@@ -1,6 +1,4 @@
 .container-carousel-small {
-    /* width: 250px; */
-    overflow: hidden;
     display: flex;
     margin: auto;
     position: relative;
@@ -8,9 +6,7 @@
     flex-wrap: wrap;
 }
 
-.projects-list {
-    display: flex;
-}
+
 
 .card {
     height: 130px;
@@ -19,8 +15,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.055)
+    background-color: rgba(255, 255, 255, 0.055);
+    transition: ease-in .1s;
+}
+
+.card:hover{
+    transform: translateY(-3px);
+    box-shadow: 1px 1px 10px var(--color-primario)
+}
+
+.project-selected:hover{
+    transform: translateY(0px);
+    box-shadow: none;
 }
 
 .small-card-title {
@@ -37,6 +45,46 @@
     /* height: 300px; */
     overflow: hidden;
 }
+
+.project-selected{
+    background-color: rgb(255, 255, 255);
+}
+
+.project-selected .small-card-title{
+    color: black;
+}
+
+.project-logo{
+    display: none;
+}
+
+.project-monologo{
+    display: block;
+}
+
+.more-projects-btn{
+    color: white;
+    font-size: 16px;
+    margin: auto;
+    margin-top: 15px;
+    cursor: pointer;
+    /* border-radius: 8px; */
+    background-color: transparent;
+    border: 0;
+    padding: 5px;
+}
+
+.more-projects-btn:hover{
+    color: var(--color-primario);
+}
+
+.project-selected .project-logo{
+   display: block;
+}
+.project-selected .project-monologo{
+   display: none;
+}
+
 
 
 .info-project {
