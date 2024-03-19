@@ -1,22 +1,15 @@
 import { projectsListData } from "./data";
 
 //containers
-let container = $('.projects-list')
-
 let titleProject = $('#title-project');
 
 //children
-let projectsList = container.children();
 let itemsCarrusel = $('.projects-carousel-container .carousel').children();
 
 
 //counters
 let counter = 0;
 let projects = 0;
-
-
-
-
 
 
 //big carousel
@@ -80,7 +73,7 @@ projectsListData.forEach(
            
             </div>`)
 
-        infoProjectSmall.append(info);
+        // infoProjectSmall.append(info);
     }
 )
 
@@ -123,7 +116,7 @@ function changeProject(e) {
         $('.carousel-small-next').css({ "display": "flex" })
     }
 
-    container.css({
+    smallCarrucelContainer.css({
         "transform": "translateX(" + counter + "px)",
         "transition-timing-function": "ease-in",
         "transition-duration": ".5s",
@@ -137,10 +130,8 @@ function changeProject(e) {
 
 const changeScreenshotsOfProject = (screenshotsList) => {
 
-    console.log(screenshotsList)
 
     if (screenshotsList.length === 0) {
-        console.log('no hay imagenes estará pronto')
         $('#empty-carrucel').css({ "display": "block" });
         $('.projects-carousel-container').css({ "display": "none" });
         $('.prev').addClass('hidden');

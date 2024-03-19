@@ -1,9 +1,11 @@
 .container-carousel-small {
-    width: 250px;
+    /* width: 250px; */
     overflow: hidden;
     display: flex;
     margin: auto;
     position: relative;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .projects-list {
@@ -29,8 +31,10 @@
 }
 
 .info-project-container {
-    position: relative;
-    height: 300px;
+    position: absolute;
+    color: white;
+    bottom: 10px;
+    /* height: 300px; */
     overflow: hidden;
 }
 
@@ -99,12 +103,12 @@
     /* box-shadow: 1px 1px 15px rgb(26, 26, 26); */
 }
 
-.carousel-small-next:active{
-    transform: scale(1.1,1.1)
+.carousel-small-next:active {
+    transform: scale(1.1, 1.1)
 }
 
-.carousel-small-previos:active{
-    transform: scale(1.1,1.1)
+.carousel-small-previos:active {
+    transform: scale(1.1, 1.1)
 }
 
 
@@ -210,24 +214,25 @@
     left: 70px;
 }
 
-.prev:active,.next:active{
-    transform: scale(1.1,1.1);
+.prev:active,
+.next:active {
+    transform: scale(1.1, 1.1);
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-.pills-container{
+.pills-container {
     display: flex;
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
 }
 
-.tecnology-pill{
-    background-color:#0c9445;
-    color:white;
+.tecnology-pill {
+    background-color: #0c9445;
+    color: white;
     border-radius: 28px;
     padding: 5px 10px;
     border: 1px solid #11e056;
@@ -246,7 +251,7 @@
     .projects-carousel-container {
         width: 120px;
     }
-    
+
     .item img {
         width: 120px;
         height: 300px;
@@ -282,9 +287,10 @@
         /* background: #8c6239; */
     }
 
-    .info-project-container{
+    .info-project-container {
         height: auto;
     }
+
     .info-active {
         position: relative;
         margin-bottom: 20px;

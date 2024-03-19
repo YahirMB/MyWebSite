@@ -91,8 +91,11 @@ export const projectsListData = [
 export const experienceData = [
 	{ name: 'React', valueExperience: 50, color: '#007bff' },
 	{ name: 'JavaScript', valueExperience: 50, color: '#fff500' },
-	{ name: 'TypeScript', valueExperience: 20, color: '#0039ff' },
-	{ name: 'Angular', valueExperience: 20, color: '#ff0000' },
+	{ name: 'TypeScript', valueExperience: 50, color: '#0039ff' },
+	{ name: 'Angular', valueExperience: 10, color: '#ff0000' },
 	{ name: 'Mysql', valueExperience: 20, color: '#ff8d00' },
 	{ name: 'Nodejs', valueExperience: 25, color: '#04ff00' },
+	{ name: 'HTML', valueExperience: 50, color: '#ff0000' },
+	{ name: 'CSS', valueExperience: 50, color: '#007bff' },
+	{ name: 'Docker', valueExperience: 20, color: '#0039ff' },
 ]
