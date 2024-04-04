@@ -6,19 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My web site</title>
     <!-- libary fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" /> -->
 
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    
+
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Raleway:wght@100;200;300;400;500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <!-- <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" /> -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Raleway:wght@100;200;300;400;500&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+
 
     <!-- libraries jquery and particles -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 
 </head>
 
@@ -26,12 +38,15 @@
 
     <!-- navBar -->
     <section class="nav" id="home">
-        <h1 class="name">Alexander Manjarrez</h1>
 
-        <h1 class="front-back">Desarrollador
-            <span class="typed-text"></span>
-            <span class="cursor">&nbsp;</span>
+        <h1 class="front-back">Desarrollador Fullstack
+            <!-- <span class="typed-text"></span>
+            <span class="cursor">&nbsp;</span> -->
         </h1>
+
+        <h1 class="name">Alexander Manjarrez</h1>
+        <h5 class="phrase">"El éxito es la suma de <span class="typed-text">pequeños esfuerzos repetidos</span> día tras
+            día". <span class="typed-text">Robert Collier.</span></h5>
         <!--Menu mobile-->
         <div class="menu-container-mobile">
             <div class="btn-menu" id="btnMenu">
@@ -54,11 +69,11 @@
         </div>
         <!--Menu desktop-->
         <div class="nav-container">
-            <a class="nav-tab" href="#tab-about">ACERCA</a>
-            <a class="nav-tab" href="#tab-projects">PROYECTOS</a>
-            <a class="nav-tab" href="#tab-tecnologies">TECNOLOGÍAS</a>
-            <a class="nav-tab" href="#tab-experience">EXPERIENCIA</a>
-            <a class="nav-tab" href="#tab-contact">CONTACTO</a>
+            <a class="nav-tab" href="#tab-about">Acerca</a>
+            <a class="nav-tab" href="#tab-experience">Experiencia</a>
+            <a class="nav-tab" href="#tab-projects">Proyectos</a>
+            <a class="nav-tab" href="#tab-tecnologies">Tecnologías</a>
+            <a class="nav-tab" href="#tab-contact">Contacto</a>
             <span class="nav-tab-slider"></span>
         </div>
     </section>
@@ -66,234 +81,181 @@
         <!-- About -->
         <section class="slider" id="tab-about" style="background-color: rgba(0, 0, 0, 0.945);">
             <h1 class="title">Acerca de mí</h1>
+            <h3 class='subtitle' style="text-align: start;">Resumen profesionista</h3>
             <div class="grid-about-contaier">
-                <div>
-                    <img class="avatar-about" src="./resources/jpg/Profile.jpg">
-                </div>
-                <div>
 
-                    <p class='subtitle' style="text-align: start;">Resumen profesionista</p>
-                    <div class='text'>
-                        <p>Hola mi nombre es Yahir Alexander tengo 21 años, actualmente me encuentro estudiando
-                            en la Universidad Tecnológica de Aguascalientes en la ING.Desarrollo y Gestion de Sotfware,
-                            Me encanta Programar para Back-End y Front-End.
-                            <br>
-                            <br> Soy una persona que le encanta aprender, ser
-                            dedicado en su trabajo, siempre ver el lado bueno de las cosas y ser creactivo.Además, me
-                            gustan lo retos.
-                        </p>
-                    </div>
-                </div>
-            </div>
+                <img class="avatar-about" src="./resources/jpg/Profile.jpg">
+                <p class='text'>Hola mi nombre es Yahir Alexander tengo 21 años, actualmente me encuentro estudiando
+                    en la Universidad Tecnológica de Aguascalientes en la ING.Desarrollo y Gestion de Sotfware,
+                    Me encanta Programar para Back-End y Front-End.
+                    Soy una persona que le encanta aprender, ser
+                    dedicado en su trabajo, siempre ver el lado bueno de las cosas y ser creactivo.Además, me
+                    gustan lo retos.
+                </p>
 
-        </section>
-        <!-- Projects -->
-        <section class="slider" id="tab-projects">
-            <h1 class="title">Proyectos</h1>
-            <div class="page-container">
-
-                <div style="width: 100%;">
-                    <!-- <h1 class="subtitle">Proyecto</h1> -->
-                    <div style="position: relative; width: 250px; margin: auto;">
-                        <div class="container-carousel-small">
-                            <!--Small carrucel-->
-                            <div class="projects-list" id="smallCarruselProjects"></div>
-                        </div>
-                        <div class="carousel-small-previos"><img src="./resources/icons/chevron-left-solid.svg" /></div>
-                        <div class="carousel-small-next"><img src="./resources/icons/chevron-right-solid.svg" /></div>
-
-                    </div>
-                    <div class="info-project-container" id="infoProjectSmall">
-
-                    </div>
-                </div>
-
-                <!--Carrucel de proyectos-->
-                <div style="height: 500px; position: relative; justify-self: normal;">
-                    <h2 class="project-subtitle" id="title-project">DailyPlan</h2>
-                    <div class="projects-carousel-container">
-                        <div class="carousel active-carousel">
-                            <div class="item a"><img src="./resources/projects/dailyPlan/dailypla_1.jpg" /></div>
-                            <div class="item b"><img src="./resources/projects/dailyPlan/dailypla_4.jpg" /></div>
-                            <div class="item c"><img src="./resources/projects/dailyPlan/dailypla_2.jpg" /></div>
-                            <div class="item d"><img src="./resources/projects/dailyPlan/dailypla_5.jpg" /></div>
-                            <div class="item e"><img src="./resources/projects/dailyPlan/dailypla_3.jpg" /></div>
-                            <div class="item f"><img src="./resources/projects/dailyPlan/dailypla_6.jpg" /></div>
-                            <!-- <div class="item c"><img src="./resources/projects/dailyPlan/dailyplan_7.png"/></div> -->
-                        </div>
-                    </div>
-                    <div class="prev"><img src="./resources/icons/chevron-left-solid.svg" alt=""></div>
-                    <div class="next"><img src="./resources/icons/chevron-right-solid.svg" alt=""></div>
-                    <h2 class="message-empty" id="empty-carrucel">Algunas capturas estarán disponibles próximamente.
-                    </h2>
-                </div>
-            </div>
-        </section>
-        <!-- Tecnologies -->
-        <section class="slider" id="tab-tecnologies" style="background-color: rgba(0, 0, 0, 0.945);">
-            <h1 class="title">Tecnologías</h1>
-
-            <div class="tag-list">
-                <div class="loop-slider" style="--duration:5951ms; --direction:normal;">
-                    <div class="inner">
-                        <div class="tag">
-                            <img src="./resources/svg/javascript.svg" alt="image" />
-                            <p>JavaScript</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/angular.svg" alt="image" />
-                            <p>Angular</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/typescript.svg" alt="image" />
-                            <p>Typescript</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/node.svg" alt="image" />
-                            <p>Node</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/mysql.svg" alt="image" />
-                            <p>MySQL</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/slack.svg" alt="image" />
-                            <p>Slack</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/docker.svg" alt="image" />
-                            <p>Docker</p>
-                        </div>
-                        <!-- duplicated content -->
-                        <div class="tag">
-                            <img src="./resources/svg/javascript.svg" alt="image" />
-                            <p>JavaScript</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/angular.svg" alt="image" />
-                            <p>Angular</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/typescript.svg" alt="image" />
-                            <p>Typescript</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/node.svg" alt="image" />
-                            <p>Node</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/mysql.svg" alt="image" />
-                            <p>MySQL</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/slack.svg" alt="image" />
-                            <p>Slack</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/docker.svg" alt="image" />
-                            <p>Docker</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="loop-slider" style="--duration:4951ms; --direction:reverse;">
-                    <div class="inner">
-                        <div class="tag">
-                            <img src="./resources/svg/figma.svg" alt="image" />
-                            <p>Figma</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/react.svg" alt="image" />
-                            <p>React</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/tailwind.svg" alt="image" />
-                            <p>Tailwind</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/typescript.svg" alt="image" />
-                            <p>Typescript</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/mysql.svg" alt="image" />
-                            <p>MySQL</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/slack.svg" alt="image" />
-                            <p>Slack</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/docker.svg" alt="image" />
-                            <p>Docker</p>
-                        </div>
-                        <!-- duplicated content -->
-                        <div class="tag">
-                            <img src="./resources/svg/figma.svg" alt="image" />
-                            <p>Figma</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/react.svg" alt="image" />
-                            <p>React</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/tailwind.svg" alt="image" />
-                            <p>Tailwind</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/typescript.svg" alt="image" />
-                            <p>Typescript</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/mysql.svg" alt="image" />
-                            <p>MySQL</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/slack.svg" alt="image" />
-                            <p>Slack</p>
-                        </div>
-                        <div class="tag">
-                            <img src="./resources/svg/docker.svg" alt="image" />
-                            <p>Docker</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="fade"></div>
             </div>
 
         </section>
         <!-- Experiences -->
         <section class="slider" id="tab-experience">
             <h1 class="title">Experiencia</h1>
-
-            <div class="grid-container-esxperiences">
-                <div>
-
-                    <h1 class="subtitle" style="text-align: start;">Uso de tecnologias</h1>
-                    <div class="experience-list">
-                    </div>
-                    <div class="show-more" id="show-more-skills">Ver más</div>
-                </div>
-                <div>
-
-                    <h1 class="experiences-title" style="text-align: start;">Empresa: <span
-                            class="experience-content">Softwaria</span></h1>
-                    <h1 class="experiences-title" style="text-align: start;">Puesto: <span
-                            class="experience-content">Desarrollador web</span></h1>
-                    <h1 class="experiences-title" style="text-align: start;">Tiempo: <span class="experience-content">1
-                            año y 2 meses como desarrollador web</span></h1>
-                    <h1 class="experiences-title" style="text-align: start;">Actividades:
-                        <ul class="experience-content ">
-                            <li>Maquetado de paginas y aplicaciones web</li>
-                            <li>Consumo de Apis</li>
-                            <li>Mantemiento de software</li>
-                            <li>Diseño responsive</li>
-                            <li>Limpieza de codigo</li>
-                        </ul>
-                    </h1>
-
-
-                </div>
+            <div class="ball-light"></div>
+            <div class="toggle-container">
+                <span class="toggle-text">Trabajos</span>
+                <span class="toggle-text">Educación</span>
+                <div class="toggle-indicator"></div>
             </div>
+
+            <div id="cd-timeline-job" class="cd-container"></div>
+            <div id="cd-timeline-education" class="cd-container"></div>
+
+
         </section>
+        <!-- Projects -->
+        <section class="slider" id="tab-projects" style="background-color: rgba(0, 0, 0, 0.945);">
+
+            <h1 class="title">Proyectos</h1>
+
+            <div id="projects-list" class="projects-list"></div>
+        </section>
+        <!-- Tecnologies -->
+        <section class="slider" id="tab-tecnologies">
+            <h1 class="title">Tecnologías</h1>
+            <h1 class="subtitle" style="text-align: start;">Uso de tecnologias</h1>
+
+            <div class="tecnologies-wrap">
+                <div class="tag-list">
+                    <div class="loop-slider" style="--duration:5951ms; --direction:normal;">
+                        <div class="inner">
+                            <div class="tag">
+                                <img src="./resources/svg/javascript.svg" alt="image" />
+                                <p>JavaScript</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/angular.svg" alt="image" />
+                                <p>Angular</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/typescript.svg" alt="image" />
+                                <p>Typescript</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/node.svg" alt="image" />
+                                <p>Node</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/mysql.svg" alt="image" />
+                                <p>MySQL</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/slack.svg" alt="image" />
+                                <p>Slack</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/docker.svg" alt="image" />
+                                <p>Docker</p>
+                            </div>
+                            <!-- duplicated content -->
+                            <div class="tag">
+                                <img src="./resources/svg/javascript.svg" alt="image" />
+                                <p>JavaScript</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/angular.svg" alt="image" />
+                                <p>Angular</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/typescript.svg" alt="image" />
+                                <p>Typescript</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/node.svg" alt="image" />
+                                <p>Node</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/mysql.svg" alt="image" />
+                                <p>MySQL</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/slack.svg" alt="image" />
+                                <p>Slack</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/docker.svg" alt="image" />
+                                <p>Docker</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="loop-slider" style="--duration:4951ms; --direction:reverse;">
+                        <div class="inner">
+                            <div class="tag">
+                                <img src="./resources/svg/figma.svg" alt="image" />
+                                <p>Figma</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/react.svg" alt="image" />
+                                <p>React</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/tailwind.svg" alt="image" />
+                                <p>Tailwind</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/typescript.svg" alt="image" />
+                                <p>Typescript</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/mysql.svg" alt="image" />
+                                <p>MySQL</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/slack.svg" alt="image" />
+                                <p>Slack</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/docker.svg" alt="image" />
+                                <p>Docker</p>
+                            </div>
+                            <!-- duplicated content -->
+                            <div class="tag">
+                                <img src="./resources/svg/figma.svg" alt="image" />
+                                <p>Figma</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/react.svg" alt="image" />
+                                <p>React</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/tailwind.svg" alt="image" />
+                                <p>Tailwind</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/typescript.svg" alt="image" />
+                                <p>Typescript</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/mysql.svg" alt="image" />
+                                <p>MySQL</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/slack.svg" alt="image" />
+                                <p>Slack</p>
+                            </div>
+                            <div class="tag">
+                                <img src="./resources/svg/docker.svg" alt="image" />
+                                <p>Docker</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade"></div>
+                </div>
+                <div class="experience-list"></div>
+                <!-- <button class="more-projects-btn show-more-bnt" id="show-more-skills">Ver más</button> -->
+                <!-- <div class="show-more" >Ver más</div> -->
+            </div>
+
+        </section>
+
         <!-- Contact -->
         <section class="slider" id="tab-contact" style="background:linear-gradient(219deg, #3effab 0%, black 57%)">
             <h1 class="title">Contactarme</h1>
@@ -329,7 +291,8 @@
                     </li>
                     <li class="icon linkedin">
                         <span class="tooltip">Linkedin</span>
-                        <a href="https://www.linkedin.com/in/yahir-alexander-manjarrez-belevin-895450201/" target="_blank">
+                        <a href="https://www.linkedin.com/in/yahir-alexander-manjarrez-belevin-895450201/"
+                            target="_blank">
                             <img src="./resources/icons/linkedin-in.svg" />
                         </a>
                     </li>

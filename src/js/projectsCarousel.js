@@ -1,22 +1,20 @@
 import { projectsListData } from "./data";
+// import "./slick"
 
 //containers
-let container = $('.projects-list')
-
-let titleProject = $('#title-project');
+let $titleProject = $('#title-project');
 
 //children
-let projectsList = container.children();
 let itemsCarrusel = $('.projects-carousel-container .carousel').children();
 
+const elementesIdDicionary = {
+    projectsContainer: '#projects-list',
+    projectParagraphContainer: '#projectParagraph'
+}
 
 //counters
 let counter = 0;
 let projects = 0;
-
-
-
-
 
 
 //big carousel
@@ -44,110 +42,158 @@ function rotateScreenshot(direction) {
 
 //SmallCarrucel
 
-const smallCarrucelContainer = $('#smallCarruselProjects');
-const infoProjectSmall = $('#infoProjectSmall');
+const $projectsContainer = $(elementesIdDicionary.projectsContainer);
+const $projectParagraph = $(elementesIdDicionary.projectParagraphContainer);
+
+const windowWidth = $(window).width() <= 425 ? "200px" : "100%" ;
 
 projectsListData.forEach(
     (project, index) => {
-        const card = $(`<div class="card" data-index=${index}>
-        <p class="small-card-title">${project.name}</p>
-        <img src="${project.logoUrl}" alt="icono-worldShoes" />
-        </div>`);
 
-        smallCarrucelContainer.append(card);
+        let technologyListElemets = '';
+        let imgsList = '';
 
-        let technologyListElemets = '' ;
-        
         project.technologiesUsed.forEach(
             techno => {
                 technologyListElemets += `<span class="tecnology-pill">${techno}</span>`
             }
         )
-        
 
-        //projects' info
-        const info = $(`
-            <div class="info-project text ${index == 0 && 'info-active'}"> 
-            <span>Fecha del proyecto: ${project.startDate} a ${project.endDate}</span>
-            <p class="project-paragraph">${project.description}
-            ${project.linkVideo &&
-                `<a href="${project.linkVideo}">Clic para ver video</a>`
+
+        project.screenshotList.forEach(
+            ({deviceSize,imageUrl}) => {
+                imgsList += `<img class="project-img" src="${imageUrl}" alt="img" />`
             }
-            </p>
-            <div class="pills-container">
-            ${technologyListElemets}
-            </div>
-           
-            </div>`)
+        )
 
-        infoProjectSmall.append(info);
+        const card = $(`
+        <div class="project-card">
+            <div class="project-card-border"></div>
+            <div class="project-card-contect"></div>
+            <div style="z-index: 1;">
+                <div class="project-carousel" style="width:${project.multiplatform  === "desktop" ? windowWidth:"100px"}">
+                    ${imgsList}
+                </div>
+                <hr class="project-card-line" />
+                <div class="project-card-body">
+                <div style="display:flex;align-items:center">
+                    <h2 class="project-title">${project.name}</h2>
+
+                    ${project.linkVideo ? 
+                        `<div class="wrapper">
+                            <div class="icon youtube">
+                                <span class="tooltip">Video</span>
+
+                                <a href="${project.linkVideo}" target="_blank">
+                                    <img src="./resources/icons/youtube.svg" />
+                                </a>
+                            </div>
+                        </div>` : ''
+                    }
+                </div>
+                    <p class="project-paragraph ">${project.description}</p>
+
+                    <div class="pills-container">
+                        ${technologyListElemets}
+                    </div>
+                </div>
+            </div>
+        </div>
+        `);
+
+        $projectsContainer.append(card);
+
     }
 )
 
 
-let infoContainer = $('#infoProjectSmall');
-let infosProjects = infoContainer.children()
-$('.carousel-small-previos').on('click', { d: "p" }, changeProject)
-$('.carousel-small-next').on('click', { d: "n" }, changeProject)
+document.addEventListener('DOMContentLoaded', () => {
+    $('.project-carousel').slick(
+        {
+            // adaptiveHeight:true,
+            // centerMode: true,
+            // dots: true,
+            // dots: true,
+            // fade: true,
+            // variableWidth:true,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            cssEase: 'linear',
+            infinite: true,
+            pauseOnFocus:false,
+            pauseOnHover:false,
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            speed: 500,
+            
+            responsive:[{
+                breakpoint:425,
+                settings: {
+
+                    // variableWidth:true,
+                    slidesToScroll: 1,
+                    slidesToShow: 1,
+                    mobileFirst:true,
+                }
+             }]
+        }
+    );
+})
 
 
-function changeProject(e) {
-    if (e.data.d == "n") {
-        counter -= 250;
-        projects += 1;
-    }
-
-    if (e.data.d == "p") {
-        counter += 250;
-        projects -= 1;
-    }
-
-    titleProject.text(projectsListData[projects].name)
 
 
-    //elemina la clase a todas los elementos
-    infosProjects.each(function () {
-        $(this).removeClass('info-active');
+$('.card').each(
+    (index, card) => $(card).on('click', (e) => {
+        const $element = $(e.target.closest('.card'));
+        const $projectSelectedOld = $('.project-selected');
+
+        $projectSelectedOld.removeClass('project-selected');
+        $element.addClass('project-selected');
+
+        changeProject($element.data('index'));
+
     })
-
-    //le agrega el que esta activo
-    $(infosProjects[projects]).addClass('info-active');
+)
 
 
-    if (projects == 0) {
-        $('.carousel-small-previos').css({ "display": "none" })
-    } else if (projects == projectsListData.length - 1) {
-        $('.carousel-small-next').css({ "display": "none" })
-    } else {
-        $('.carousel-small-previos').css({ "display": "flex" })
-        $('.carousel-small-next').css({ "display": "flex" })
-    }
-
-    container.css({
-        "transform": "translateX(" + counter + "px)",
-        "transition-timing-function": "ease-in",
-        "transition-duration": ".5s",
-    });
+// $('.carousel-small-previos').on('click', { d: "p" }, changeProject)
+// $('.carousel-small-next').on('click', { d: "n" }, changeProject)
 
 
-    changeScreenshotsOfProject(projectsListData[projects].screenshotList)
+const changeProject = (projectId) => {
+    const project = projectsListData.find(project => project.id === projectId);
+
+    changeScreenshotsOfProject(project.screenshotList);
+    changeProjectInfo(project)
 }
 
 
+/**
+ * 
+ * @param {project} project 
+ */
+
+const changeProjectInfo = (project) => {
+    $titleProject.text(project.name);
+    $projectParagraph.text(project.description)
+
+}
+
+/**
+ * 
+ * @param {Array<Url>} screenshotsList 
+ */
 
 const changeScreenshotsOfProject = (screenshotsList) => {
-
-    console.log(screenshotsList)
-
     if (screenshotsList.length === 0) {
-        console.log('no hay imagenes estará pronto')
         $('#empty-carrucel').css({ "display": "block" });
         $('.projects-carousel-container').css({ "display": "none" });
         $('.prev').addClass('hidden');
         $('.next').addClass('hidden');
 
     } else {
-
         $('#empty-carrucel').css({ "display": "none" });
         $('.projects-carousel-container').css({ "display": "block" });
         $('.prev').removeClass('hidden');
@@ -183,6 +229,4 @@ carousel.on('touchend', (e) => {
         touchmove = 0;
     }
 });
-
-
 

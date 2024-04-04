@@ -4,6 +4,13 @@
   padding: 0;
 }
 
+.float-platform{
+  position: absolute;
+  bottom: 80px;
+  transform: translateY(calc(100% - 80px));
+  right: 0;
+}
+
 .wrapper .icon {
   position: relative;
   background: #1a1a1a7a;
@@ -93,6 +100,16 @@
 .wrapper .linkedin:hover .tooltip::before {
   background: #1877F2;
   color: var(--color-white);
+}
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background: white;
+  color: red;
+}
+
+.wrapper .youtube{
+  background: transparent;
 }
 
 

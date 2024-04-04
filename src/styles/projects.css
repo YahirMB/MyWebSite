@@ -1,14 +1,143 @@
-.container-carousel-small {
-    width: 250px;
-    overflow: hidden;
-    display: flex;
-    margin: auto;
+/* ----------- CARD--------------- */
+.project-card {
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(240, 15%, 9%);
+    --paragraph: hsl(0, 0%, 83%);
+    --line: hsl(240, 9%, 17%);
+    --primary: hsl(266, 92%, 58%);
+    height: auto;
+
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 1rem;
+    width: 19rem;
+    border-radius: 1rem;
+    
+}
+
+.project-card-body .project-paragraph {
+    color: white;
+    font-weight: 100;
+}
+
+.project-title{
+    color: white;
+}
+
+.project-card-contect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-image:radial-gradient(at 144% 100%, #00ff90, black);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.project-card .project-card-line {
+    width: 100%;
+    height: 1px;
+    background-color:white;
+    border: none;
+}
+
+
+.project-card .project-card-border {
+    overflow: hidden;
+    pointer-events: none;
+
+    position: absolute;
+    /* z-index: -1; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    background-image: linear-gradient(0deg,white,white);
+
+    border-radius: 1rem;
+}
+
+.project-card .project-card-border::before {
+    content: "";
+    pointer-events: none;
+
+    position: fixed;
+    z-index: 200;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%), rotate(0deg);
+    transform-origin: left;
+
+    width: 200%;
+    height: 10rem;
+    background-image: linear-gradient(0deg,
+            hsla(0, 0%, 100%, 0) 0%,
+            #000000f1 40%,
+            #000000f1 60%,
+            hsla(0, 0%, 40%, 0) 100%);
+
+    animation: rotate 3s linear infinite;   
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ---------------------------- */
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
 }
 
 .projects-list {
     display: flex;
+    margin: auto;
+    position: relative;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+.project-carousel{
+    text-align: center;
+    width: 80px;
+    margin: auto;
+}
+
+.project-img{
+    max-width: 100%;
+    
+    /* height: auto; */
+}
+
+
+.ball-light{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    border-radius: 100%;
+    box-shadow: 
+        0px 0px 40px  rgb(0, 255, 144,.93), 
+        0px 0px 80px rgb(0, 255, 144,.94),
+        0px 0px 120px rgb(0, 255, 144,.95),
+        0px 0px 160px rgb(0, 255, 144,.96),
+        0px 0px 200px rgb(0, 255, 144,.97),
+        0px 0px 240px rgb(0, 255, 144.98),
+        0px 0px 280px rgb(0, 255, 144,.99),
+        0px 0px 320px rgb(0, 255, 144);
+    filter: blur(40px);
+}
+
 
 .card {
     height: 130px;
@@ -17,8 +146,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.055)
+    background-color: rgba(255, 255, 255, 0.055);
+    transition: ease-out .2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 1px 1px 10px var(--color-primario)
+}
+
+.project-selected:hover {
+    transform: translateY(0px);
+    box-shadow: none;
 }
 
 .small-card-title {
@@ -29,10 +170,101 @@
 }
 
 .info-project-container {
-    position: relative;
-    height: 300px;
+    position: absolute;
+    color: white;
+    bottom: 10px;
+    /* height: 300px; */
     overflow: hidden;
 }
+
+.project-selected {
+    background-color: rgb(255, 255, 255);
+    transition: ease-in .2s;
+}
+
+.project-selected .small-card-title {
+    color: black;
+}
+
+.project-logo {
+    display: none;
+}
+
+.project-monologo {
+    display: block;
+}
+
+
+
+.more-projects-btn {
+    color: white;
+    font-size: 16px;
+    margin: auto;
+    margin-top: 15px;
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    position: relative;
+    border: 0;
+    padding: 5px;
+    height: 50px;
+    width: 100px;
+}
+
+.more-projects-btn::before {
+    content: '';
+    width: 104%;
+    height: 104%;
+    z-index: 0;
+    top: -1%;
+    left: -2%;
+    background-image: linear-gradient(var(--rotate), var(--color-primario), transparent 50%, transparent);
+    position: absolute;
+    animation: spin 1s linear infinite;
+}
+
+.more-projects-btn::after {
+    content: 'Ver más';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background:#0e0e0e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    animation: spin 2.5s linear infinite;
+}
+.show-more-bnt::after{
+    background: #000000;
+}
+
+.show-more-bnt::before{
+    top: -2%;
+}
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+
+    100% {
+        --rotate: 360deg;
+    }
+}
+
+.more-projects-btn:hover {
+    color: var(--color-primario);
+}
+
+.project-selected .project-logo {
+    display: block;
+}
+
+.project-selected .project-monologo {
+    display: none;
+}
+
 
 
 .info-project {
@@ -99,12 +331,12 @@
     /* box-shadow: 1px 1px 15px rgb(26, 26, 26); */
 }
 
-.carousel-small-next:active{
-    transform: scale(1.1,1.1)
+.carousel-small-next:active {
+    transform: scale(1.1, 1.1)
 }
 
-.carousel-small-previos:active{
-    transform: scale(1.1,1.1)
+.carousel-small-previos:active {
+    transform: scale(1.1, 1.1)
 }
 
 
@@ -210,24 +442,25 @@
     left: 70px;
 }
 
-.prev:active,.next:active{
-    transform: scale(1.1,1.1);
+.prev:active,
+.next:active {
+    transform: scale(1.1, 1.1);
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-.pills-container{
+.pills-container {
     display: flex;
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
 }
 
-.tecnology-pill{
-    background-color:#0c9445;
-    color:white;
+.tecnology-pill {
+    background-color: #0c9445;
+    color: white;
     border-radius: 28px;
     padding: 5px 10px;
     border: 1px solid #11e056;
@@ -246,7 +479,7 @@
     .projects-carousel-container {
         width: 120px;
     }
-    
+
     .item img {
         width: 120px;
         height: 300px;
@@ -282,9 +515,10 @@
         /* background: #8c6239; */
     }
 
-    .info-project-container{
+    .info-project-container {
         height: auto;
     }
+
     .info-active {
         position: relative;
         margin-bottom: 20px;
