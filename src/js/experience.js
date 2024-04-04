@@ -1,11 +1,9 @@
-import { experienceData } from "./data";
+import { educations, experienceData,jobs} from "./data";
+
 
 const slider = document.querySelector('#slider');
 const pct = document.querySelector('.pct');
 const pctIndicator = document.querySelector('#pct-ind')
-
-//React/Javascript/CSS/HTML/Angular/TypeScript/React-Native/Mysql/Node
-
 
 const experiesList = $('.experience-list')
 
@@ -13,13 +11,13 @@ const progressCircle = (value, pctIndicator, progressBar, color) => {
 	// percent for dashoffset
 	const p = (1 - value / 100) * (2 * (22 / 7) * 40);
 
-	pctIndicator.style = `stroke-dashoffset: ${p}; stroke:${color}`;
-
-	progressBar.style = ` background: linear-gradient(90deg,${color + ' ' + value}%, ${color + ' ' + value}%);`;
+	//color personality 
+	// pctIndicator.style = `stroke-dashoffset: ${p}; stroke:${color}`;
+	progressBar.style = ` background: linear-gradient(90deg,#00ff90 ${value}%,white ${value}%);`;
 };
 
 $.each(experienceData, function (index, skill) {
-	const createElement = $(`<div class="experience-container ${index < 4 ? '' : 'hidden-skills'}">
+	const createElement = $(`<div class="experience-container">
 	<p class="experience-title">${this.name}</p>
 	<div class="progress-bar-container">
 		<div class="bar"></div>
@@ -65,7 +63,7 @@ showMoreSkills.on('click', (e) => {
 		showMoreSkills.text('Ver menos')
 	}
 
-	
+
 
 	skillHidden.each(
 		(index, skill) => {
@@ -74,3 +72,104 @@ showMoreSkills.on('click', (e) => {
 	)
 
 })
+
+//toggle 
+const $toggleContainer = $('.toggle-container');
+const $toggleTexts = $('.toggle-text');
+const $toggleIndicator = $('.toggle-indicator');
+const $timeLinesContainer = $('.cd-container')
+let textWidth;
+let isActive = false;
+
+
+
+/**
+ * 
+ * @param {HTMLDivElement} element 
+ */
+
+const changeTimeLine = (isActiveToggle) => {
+
+	if (isActiveToggle) {
+		textWidth = $toggleTexts.last().width();
+	} else {
+		textWidth = $toggleTexts.first().width();
+	}
+
+	$toggleIndicator.width(textWidth + 10);
+}
+
+$toggleContainer.on('click', function () {
+	$toggleIndicator.toggleClass('toggle-indicator-active');
+
+	if ($toggleIndicator.hasClass('toggle-indicator-active')) {
+		isActive = true;
+		$($timeLinesContainer[1]).show();
+		$($timeLinesContainer[0]).hide();
+	} else {
+		isActive = false;
+		$($timeLinesContainer[0]).show();
+		$($timeLinesContainer[1]).hide();
+	}
+	changeTimeLine(isActive)
+})
+
+changeTimeLine(isActive);
+$($timeLinesContainer[1]).hide();
+
+//paint timelines 
+
+const $cdTimeLineJob = $('#cd-timeline-job');
+const $cdTimeLineEducation = $('#cd-timeline-education');
+
+
+
+jobs.forEach(
+	job => {
+
+		const itemJob = $(`
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-picture">
+				<img src="./resources/icons/briefcase-solid.svg" alt="Briefcase">
+			</div> 
+		
+			<div class="cd-timeline-content">
+				<h2>${job.position}</h2>
+				
+				<div class="date-cotainer">
+					<h3 class="company-name">${job.company}</h3>
+					<span class="cd-date">${job.startDate} - ${job.endDate}</span>
+				</div>
+				
+				<p class="text">${job.description}</p>
+			</div
+		</div>
+		`)
+	
+		$cdTimeLineJob.append(itemJob);
+	}
+)
+
+educations.forEach(
+	education => {
+
+		const itemEducation = $(`
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-picture">
+				<img src="resources/icons/graduation-cap-solid.svg" alt="Briefcase">
+			</div>
+
+			<div class="cd-timeline-content">
+				${education.courseUrl ?
+					`<a href="${education.courseUrl}" class="education-title-link">${education.title} <img height="20" src='../resources/icons/link-solid.svg' alt='link' /></a>` :
+					`<h2 class="education-title">${education.title}</h2>` 
+				}
+				<h3 class="text">${education.instituteName}</h3>
+				<span class="cd-date">${education.startDate} - ${education.endDate}</span>
+			</div>
+		</div>
+		`)
+	
+		$cdTimeLineEducation.append(itemEducation);
+	}
+)

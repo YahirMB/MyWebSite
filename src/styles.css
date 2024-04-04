@@ -16,7 +16,7 @@
 
 body {
     margin: 0;
-    font-family: 'ROBOTO';
+    font-family: 'ROBOTO',sans-serif;
     box-sizing: border-box;
 }
 
@@ -119,17 +119,29 @@ a {
 
 .name {
     color: var(--color-white);
-    font-size: 80px;
-    letter-spacing: 0.3rem;
+    font-size: 50px;
+    /* letter-spacing: 0.3rem; */
     font-family: sans-serif;
     z-index: 4;
 }
+
+.phrase {
+    color: var(--color-white);
+    font-size: 20px;
+    /* letter-spacing: 0.3rem; */
+    font-family: sans-serif;
+    z-index: 4;
+    margin: 0;
+    text-align: center;
+}
+
+
 
 .title {
     font-size: var(--text-size-70);
     letter-spacing: 0.3rem;
     font-family: "ROBOTO", sans-serif;
-    font-weight: 300;
+    font-weight: bold;
     color: var(--color-primario);
     border-radius: 50px;
     padding: 10px;
@@ -146,10 +158,12 @@ a {
     font-family: "ROBOTO", sans-serif;
     font-weight: 300;
     color: var(--color-title);
-    text-align: justify;
+    line-height: 25px;
+    text-align: start;
 }
 
 .background {
+    /* display: none; */
     position: absolute;
     height: 100vh;
     top: 0;
@@ -161,11 +175,11 @@ a {
 
 /* Typing */
 .front-back {
-    font-size: 2.5vw;
-    letter-spacing: 0.1rem;
-    text-align: center;
-    z-index: 2;
-    color: white;
+    color: var(--color-primario);
+    font-size: 80px;
+    /* letter-spacing: 0.3rem; */
+    font-family: sans-serif;
+    z-index: 4;
 }
 
 .typed-text {
@@ -210,15 +224,18 @@ a {
 
 /*Section about*/
 .grid-about-contaier {
-    display: flex;
-    position: relative;
-    text-align: center;
-    align-items: center;
+    margin: auto;
+    width: 60%;
+    margin-bottom: 50px;
 }
 
 .avatar-about {
-    width: 50%;
     border-radius: 50%;
+    float: left;
+    height: 200px;
+    box-shadow: 1px 1px 40px var(--color-primario);
+    shape-outside: margin-box;
+    margin-right: 50px;
 }
 
 /*Menu*/
@@ -226,13 +243,13 @@ a {
     display: none;
 }
 
-.show-more{
+
+/* .show-more{
     border: none;
     padding: 8px 8px;
     color: #ffffff;
     margin-top: 15px;
     font-size: 16px;
-    /* font-weight: bold; */
     width: max-content;
     margin: auto;
     cursor: pointer;
@@ -240,7 +257,7 @@ a {
 
 .show-more:hover{
     color: var(--color-primario);
-}
+} */
 
 @media (max-width: 425px) {
 
@@ -255,12 +272,13 @@ a {
 
     /*main*/
     .name {
-        font-size: 14vw;
+        font-size: 6vw;
         text-align: center;
     }
 
     .front-back {
-        font-size: 6vw;
+        font-size: 14vw;
+        text-align: center;
     }
 
     /*seciton about*/

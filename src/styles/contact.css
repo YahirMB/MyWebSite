@@ -104,8 +104,12 @@
 .wrapper .youtube:hover,
 .wrapper .youtube:hover .tooltip,
 .wrapper .youtube:hover .tooltip::before {
-  background: #ffffff;
+  background: white;
   color: red;
+}
+
+.wrapper .youtube{
+  background: transparent;
 }
 
 
