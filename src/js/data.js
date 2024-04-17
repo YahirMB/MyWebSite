@@ -194,7 +194,7 @@ export const jobs = [
 
 export const educations = [
     { title: 'Ing. Desarrollo y gestión de software', description: '', startDate: 'Septiembre 2022', endDate: 'Abril 2024', instituteName: 'Universidad Tecnológica de Aguascalientes', courseUrl: '', certificateUrl: '' },
-    { title: 'TSU.Tecnologías de la información', description: '', startDate: 'Septiembre 2019', endDate: 'Agosto 2022', instituteName: 'Universidad Tecnológica de Aguascalientes', courseUrl: '', certificateUrl: '' },
+    { title: 'TSU.Tecnologías de la información', description: '', startDate: 'Septiembre 2020', endDate: 'Agosto 2022', instituteName: 'Universidad Tecnológica de Aguascalientes', courseUrl: '', certificateUrl: '' },
     { title: 'Javascript Moderno:Guía para dominar el lenguaje', description: '', startDate: 'Agosto 2022', endDate: 'Septiembre 2022', instituteName: 'Udemy', courseUrl: 'https://www.udemy.com/course/javascript-fernando-herrera/', certificateUrl: '' },
     { title: 'React Native:Aplicaciones nativas para IOS y Android', description: '', startDate: 'Marzo 2023', endDate: 'Octubre 2023', instituteName: 'Udemy', courseUrl: 'https://www.udemy.com/course/react-native-fh/', certificateUrl: '' },
     { title: 'React:De cero a experto(Hooks y MERN)', description: '', startDate: 'Abril 2022 ', endDate: 'Marzo 2022', instituteName: 'Udemy', courseUrl: 'https://www.udemy.com/course/react-cero-experto/', certificateUrl: '' },

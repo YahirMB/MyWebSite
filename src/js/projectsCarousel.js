@@ -85,7 +85,7 @@ projectsListData.forEach(
                                 <span class="tooltip">Video</span>
 
                                 <a href="${project.linkVideo}" target="_blank">
-                                    <img src="./resources/icons/youtube.svg" />
+                                    <img src="./resources/icons/youtube.svg" alt="Imagen de youtube" />
                                 </a>
                             </div>
                         </div>` : ''

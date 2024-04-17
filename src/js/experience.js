@@ -21,15 +21,6 @@ $.each(experienceData, function (index, skill) {
 	<p class="experience-title">${this.name}</p>
 	<div class="progress-bar-container">
 		<div class="bar"></div>
-		<div class="circular-progress">
-			<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' aria-labelledby='title'
-				role='graphic'>
-				<title id='title'>svg circular progress bar</title>
-				<circle cx="50" cy="50" r="40"></circle>
-				<circle cx="50" cy="50" r="40" id='pct-ind'></circle>
-			</svg>
-			<p class="pct">${this.valueExperience}%</p>
-		</div>
 	</div>
 </div>`)
 
