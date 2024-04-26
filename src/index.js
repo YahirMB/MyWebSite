@@ -18,7 +18,7 @@ window.onload = function () {
 const particles = Particles.init({
   selector: ".background",
   color: ["#03c1da", "#00FF90"],
-  connectParticles: true,
+  connectParticles: false,
   responsive: [
     {
       breakpoint: 768,

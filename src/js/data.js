@@ -134,27 +134,31 @@ export const projectsListData = [
         ],
         screenshotList: [
             {
-                imageUrl: "./resources/projects/WordlShoesImages/mobile (1).png",
+                imageUrl: "./resources/projects/WordlShoesImages/mobile.png",
                 deviceSize: "mobile",
             },
             {
-                imageUrl: "./resources/projects/WordlShoesImages/mobile (2).png",
+                imageUrl: "./resources/projects/WordlShoesImages/mobile_1.png",
                 deviceSize: "mobile",
             },
             {
-                imageUrl: "./resources/projects/WordlShoesImages/mobile (3).png",
+                imageUrl: "./resources/projects/WordlShoesImages/mobile_2.png",
                 deviceSize: "mobile",
             },
             {
-                imageUrl: "./resources/projects/WordlShoesImages/mobile (4).png",
+                imageUrl: "./resources/projects/WordlShoesImages/mobile_3.png",
                 deviceSize: "mobile",
             },
             {
-                imageUrl: "./resources/projects/WordlShoesImages/mobile (5).png",
+                imageUrl: "./resources/projects/WordlShoesImages/mobile_4.png",
                 deviceSize: "mobile",
             },
             {
-                imageUrl: "./resources/projects/WordlShoesImages/mobile (6).png",
+                imageUrl: "./resources/projects/WordlShoesImages/mobile_5.png",
+                deviceSize: "mobile",
+            },
+            {
+                imageUrl: "./resources/projects/WordlShoesImages/mobile_6.png",
                 deviceSize: "mobile",
             },
         ]

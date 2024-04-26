@@ -19,7 +19,7 @@
     
 }
 
-.project-card-body .project-paragraph {
+.project-paragraph {
     color: white;
     font-weight: 100;
 }
@@ -456,6 +456,7 @@
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
+    padding: 0;
 }
 
 .tecnology-pill {

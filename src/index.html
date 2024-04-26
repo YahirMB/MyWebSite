@@ -19,8 +19,7 @@
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <!-- Add the slick-theme.css if you want default styling -->
-    <!-- <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" /> -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Raleway:wght@100;200;300;400;500&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
@@ -28,9 +27,9 @@
 
 
     <!-- libraries jquery and particles -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
 </head>
@@ -44,19 +43,21 @@
             <!-- <span class="typed-text"></span>
             <span class="cursor">&nbsp;</span> -->
         </h1>
-
+        
         <h1 class="name">Alexander Manjarrez</h1>
         <h5 class="phrase">"El éxito es la suma de <span class="typed-text">pequeños esfuerzos repetidos</span> día tras
             día". <span class="typed-text">Robert Collier.</span></h5>
         <!--Menu mobile-->
         <div class="menu-container-mobile">
             <div class="btn-menu" id="btnMenu">
-                <img src="./resources/icons/clasificacion-de-barras.svg" alt="menu">
+                <img src="./resources/svg/icons/clasificacion-de-barras.svg" alt="menu">
             </div>
+
             <div class="btn-menu" id="btnMenu-close">
-                <img src="./resources/icons/x.svg" alt="menu">
+                <img src="./resources/svg/icons/x.svg" alt="menu">
             </div>
-            <div class="menu-mobile" id="menu-mobile">
+
+            <nav class="menu-mobile" id="menu-mobile">
                 <a class="tab-mobile" href="#tab-about">ACERCA</a>
                 <a class="tab-mobile" href="#tab-projects">PROYECTOS</a>
                 <a class="tab-mobile" href="#tab-tecnologies">TECNOLOGÍAS</a>
@@ -66,17 +67,17 @@
                 <!-- <a class="nav-tab back-start" href="#home">
                     <img src="./resources/icons/almuerzo-cohete.svg" alt="img cohete">
                 </a> -->
-            </div>
+            </nav>
         </div>
         <!--Menu desktop-->
-        <div class="nav-container">
+        <nav class="nav-container">
             <a class="nav-tab" href="#tab-about">Acerca</a>
             <a class="nav-tab" href="#tab-experience">Experiencia</a>
             <a class="nav-tab" href="#tab-projects">Proyectos</a>
             <a class="nav-tab" href="#tab-tecnologies">Tecnologías</a>
             <a class="nav-tab" href="#tab-contact">Contacto</a>
             <span class="nav-tab-slider"></span>
-        </div>
+        </nav>
     </section>
     <main class="main">
         <!-- About -->
@@ -86,12 +87,7 @@
             <div class="grid-about-contaier">
 
                 <img class="avatar-about" src="./resources/jpg/Profile.jpg" alt="avatar">
-                <p class='text'>Hola mi nombre es Yahir Alexander tengo 21 años, actualmente me encuentro estudiando
-                    en la Universidad Tecnológica de Aguascalientes en la ING.Desarrollo y Gestion de Sotfware,
-                    Me encanta Programar para Back-End y Front-End.
-                    Soy una persona que le encanta aprender, ser
-                    dedicado en su trabajo, siempre ver el lado bueno de las cosas y ser creactivo.Además, me
-                    gustan lo retos.
+                <p class='text'>Hola, me llamo Yahir Alexander, tengo 21 años y me gradué de la Universidad Tecnológica de Aguascalientes en Ingeniería en Desarrollo y Gestión de Software. Disfruto programando tanto para el Back-End como para el Front-End. Soy un apasionado del aprendizaje, dedicado en mi trabajo, optimista y creativo. Además, me encantan los desafíos.
                 </p>
 
             </div>
@@ -129,60 +125,60 @@
                     <div class="loop-slider" style="--duration:5951ms; --direction:normal;">
                         <div class="inner">
                             <div class="tag">
-                                <img src="./resources/svg/javascript.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/javascript.svg" alt="image" />
                                 <p>JavaScript</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/angular.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/angular.svg" alt="image" />
                                 <p>Angular</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/typescript.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/typescript.svg" alt="image" />
                                 <p>Typescript</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/node.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/node.svg" alt="image" />
                                 <p>Node</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/mysql.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/mysql.svg" alt="image" />
                                 <p>MySQL</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/slack.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/slack.svg" alt="image" />
                                 <p>Slack</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/docker.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/docker.svg" alt="image" />
                                 <p>Docker</p>
                             </div>
                             <!-- duplicated content -->
                             <div class="tag">
-                                <img src="./resources/svg/javascript.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/javascript.svg" alt="image" />
                                 <p>JavaScript</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/angular.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/angular.svg" alt="image" />
                                 <p>Angular</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/typescript.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/typescript.svg" alt="image" />
                                 <p>Typescript</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/node.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/node.svg" alt="image" />
                                 <p>Node</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/mysql.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/mysql.svg" alt="image" />
                                 <p>MySQL</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/slack.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/slack.svg" alt="image" />
                                 <p>Slack</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/docker.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/docker.svg" alt="image" />
                                 <p>Docker</p>
                             </div>
                         </div>
@@ -190,60 +186,60 @@
                     <div class="loop-slider" style="--duration:4951ms; --direction:reverse;">
                         <div class="inner">
                             <div class="tag">
-                                <img src="./resources/svg/figma.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/figma.svg" alt="image" />
                                 <p>Figma</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/react.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/react.svg" alt="image" />
                                 <p>React</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/tailwind.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/tailwind.svg" alt="image" />
                                 <p>Tailwind</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/typescript.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/typescript.svg" alt="image" />
                                 <p>Typescript</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/mysql.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/mysql.svg" alt="image" />
                                 <p>MySQL</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/slack.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/slack.svg" alt="image" />
                                 <p>Slack</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/docker.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/docker.svg" alt="image" />
                                 <p>Docker</p>
                             </div>
                             <!-- duplicated content -->
                             <div class="tag">
-                                <img src="./resources/svg/figma.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/figma.svg" alt="image" />
                                 <p>Figma</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/react.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/react.svg" alt="image" />
                                 <p>React</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/tailwind.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/tailwind.svg" alt="image" />
                                 <p>Tailwind</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/typescript.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/typescript.svg" alt="image" />
                                 <p>Typescript</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/mysql.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/mysql.svg" alt="image" />
                                 <p>MySQL</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/slack.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/slack.svg" alt="image" />
                                 <p>Slack</p>
                             </div>
                             <div class="tag">
-                                <img src="./resources/svg/docker.svg" alt="image" />
+                                <img src="./resources/svg/tecnologies/docker.svg" alt="image" />
                                 <p>Docker</p>
                             </div>
                         </div>
@@ -269,20 +265,20 @@
                         <span class="tooltip">Email</span>
                         <a href="mailto:alexandermanjarrez18@gmail.com?subject=Solicitud de contacto&body=Hola, vi tu página de CV y quisiera contactarte"
                             target="_blank">
-                            <img src="./resources/icons/at-solid.svg" alt="icono de correo" />
+                            <img src="./resources/svg/icons/at-solid.svg" alt="icono de correo" />
                         </a>
                     </li>
                     <li class="icon github">
                         <span class="tooltip">Github</span>
                         <a href="https://github.com/YahirMB" target="_blank">
-                            <img src="./resources/icons/github.svg" alt="icono de github" />
+                            <img src="./resources/svg/icons/github.svg" alt="icono de github" />
                         </a>
                     </li>
                     <li class="icon linkedin">
                         <span class="tooltip">Linkedin</span>
                         <a href="https://www.linkedin.com/in/yahir-alexander-manjarrez-belevin-895450201/"
                             target="_blank">
-                            <img src="./resources/icons/linkedin-in.svg" alt="icono de linkedin" />
+                            <img src="./resources/svg/icons/linkedin-in.svg" alt="icono de linkedin" />
                         </a>
                     </li>
                 </ul>

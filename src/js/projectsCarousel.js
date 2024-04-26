@@ -75,8 +75,8 @@ projectsListData.forEach(
                     ${imgsList}
                 </div>
                 <hr class="project-card-line" />
-                <div class="project-card-body">
-                <div style="display:flex;align-items:center">
+                
+                <header style="display:flex;align-items:center">
                     <h2 class="project-title">${project.name}</h2>
 
                     ${project.linkVideo ? 
@@ -85,18 +85,17 @@ projectsListData.forEach(
                                 <span class="tooltip">Video</span>
 
                                 <a href="${project.linkVideo}" target="_blank">
-                                    <img src="./resources/icons/youtube.svg" alt="Imagen de youtube" />
+                                    <img src="./resources/svg/icons/youtube.svg" alt="Imagen de youtube" />
                                 </a>
                             </div>
                         </div>` : ''
                     }
-                </div>
-                    <p class="project-paragraph ">${project.description}</p>
-
-                    <div class="pills-container">
-                        ${technologyListElemets}
-                    </div>
-                </div>
+                </header>
+                <p class="project-paragraph ">${project.description}</p>
+                <ul class="pills-container">
+                    ${technologyListElemets}
+                </ul>
+                
             </div>
         </div>
         `);

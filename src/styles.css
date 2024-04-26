@@ -123,6 +123,7 @@ a {
     /* letter-spacing: 0.3rem; */
     font-family: sans-serif;
     z-index: 4;
+    align-self: flex-end;
 }
 
 .phrase {
@@ -133,6 +134,11 @@ a {
     z-index: 4;
     margin: 0;
     text-align: center;
+    align-self: flex-end;
+    background: linear-gradient(260deg,white 50%,transparent);
+    background-clip:text;
+    text-align: end;
+    -webkit-text-fill-color: transparent;
 }
 
 
@@ -175,11 +181,14 @@ a {
 
 /* Typing */
 .front-back {
-    color: var(--color-primario);
+    
     font-size: 80px;
-    /* letter-spacing: 0.3rem; */
     font-family: sans-serif;
     z-index: 4;
+
+    background: linear-gradient(45deg, rgb(255, 255, 255), var(--color-primario) 50%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .typed-text {
@@ -274,6 +283,7 @@ a {
     .name {
         font-size: 6vw;
         text-align: center;
+        
     }
 
     .front-back {

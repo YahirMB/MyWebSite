@@ -119,9 +119,9 @@ jobs.forEach(
 	job => {
 
 		const itemJob = $(`
-		<div class="cd-timeline-block">
+		<article class="cd-timeline-block">
 			<div class="cd-timeline-img cd-picture">
-				<img src="./resources/icons/briefcase-solid.svg" alt="Briefcase">
+				<img src="./resources/svg/icons/briefcase-solid.svg" alt="Briefcase">
 			</div> 
 		
 			<div class="cd-timeline-content">
@@ -129,12 +129,12 @@ jobs.forEach(
 				
 				<div class="date-cotainer">
 					<h3 class="company-name">${job.company}</h3>
-					<span class="cd-date">${job.startDate} - ${job.endDate}</span>
+					<p class="cd-date">${job.startDate} - ${job.endDate}</p>
 				</div>
 				
 				<p class="text">${job.description}</p>
-			</div
-		</div>
+			</div>
+		</article>
 		`)
 	
 		$cdTimeLineJob.append(itemJob);
@@ -145,20 +145,20 @@ educations.forEach(
 	education => {
 
 		const itemEducation = $(`
-		<div class="cd-timeline-block">
+		<article class="cd-timeline-block">
 			<div class="cd-timeline-img cd-picture">
-				<img src="resources/icons/graduation-cap-solid.svg" alt="Briefcase">
+				<img src="resources/svg/icons/graduation-cap-solid.svg" alt="Briefcase">
 			</div>
 
 			<div class="cd-timeline-content">
 				${education.courseUrl ?
-					`<a href="${education.courseUrl}" class="education-title-link">${education.title} <img height="20" src='../resources/icons/link-solid.svg' alt='link' /></a>` :
+					`<a href="${education.courseUrl}" class="education-title-link">${education.title} <img height="20" src='../resources/svg/icons/link-solid.svg' alt='link' /></a>` :
 					`<h2 class="education-title">${education.title}</h2>` 
 				}
 				<h3 class="text">${education.instituteName}</h3>
 				<span class="cd-date">${education.startDate} - ${education.endDate}</span>
 			</div>
-		</div>
+		</article>
 		`)
 	
 		$cdTimeLineEducation.append(itemEducation);
