@@ -32,7 +32,8 @@ const particles = Particles.init({
   ]
 });
 
-class NavigationPage {
+class Navigation {
+
   constructor() {
     this.currentId = null;
     this.currentTab = null;
@@ -45,13 +46,9 @@ class NavigationPage {
     $(window).scroll(() => {
       this.onScroll();
     });
-    $(window).resize(() => {
-      this.onResize();
-    });
   }
 
   onTabClick(event, element) {
-
     event.preventDefault();
     let scrollTop =
       $(element.attr("href")).offset().top - this.tabContainerHeight + 1;
@@ -60,14 +57,7 @@ class NavigationPage {
 
   onScroll() {
     this.checkHeaderPosition();
-    this.findCurrentTabSelector();
     this.lastScroll = $(window).scrollTop();
-  }
-
-  onResize() {
-    if (this.currentId) {
-      this.setSliderCss();
-    }
   }
 
   checkHeaderPosition() {
@@ -98,49 +88,11 @@ class NavigationPage {
       $(".nav-container").removeClass("nav-container--top-second");
     }
   }
-
-  //TODO: remover this component and create a new where scroll is able to listen to the section
-
-  findCurrentTabSelector(element) {
-
-    let newCurrentId;
-    let newCurrentTab;
-    let self = this;
-    $(".nav-tab").each(function () {
-      let id = $(this).attr("href");
-      let offsetTop = $(id)[0].offsetTop - self.tabContainerHeight;
-      let offsetBottom = $(id)[0].offsetTop + $(id).height() - self.tabContainerHeight;
-      if (
-        $(window).scrollTop() > offsetTop &&
-        $(window).scrollTop() < offsetBottom
-      ) {
-        newCurrentId = id;
-        newCurrentTab = $(this);
-      }
-    });
-
-    if (this.currentId != newCurrentId || this.currentId === null) {
-      this.currentId = newCurrentId;
-      this.currentTab = newCurrentTab;
-      this.setSliderCss();
-    }
-
-  }
-
-  setSliderCss() {
-    let width = 0;
-    let left = 0;
-    if (this.currentTab) {
-
-      width = this.currentTab.css("width");
-      left = this.currentTab.offset().left;
-    }
-    $(".nav-tab-slider").css("width", width);
-    $(".nav-tab-slider").css("left", left);
-  }
 }
 
-new NavigationPage();
+new Navigation();
+
+
 
 //open menu mobile 
 
@@ -152,66 +104,16 @@ const $menuContainer = $("#menu-mobile");
 $btnMenu.on("click", (e) => {
 
   $btnMenu.css("display", 'none');
-  $btnMenuClose.css("display", 'block');
   $menuContainer.addClass("menu-in");
 })
 
 $btnMenuClose.on("click", (e) => {
   $btnMenu.css("display", 'block');
-  $btnMenuClose.css("display", 'none');
-
   $menuContainer.removeClass("menu-in");
 })
 
 $menuContainer.on("click", (e) => {
-  if (e.target === $menuContainer) return;
-
+  if (e.target === $menuContainer[0]) return;
   $menuContainer.removeClass("menu-in");
-  $btnMenuClose.css("display", 'none');
   $btnMenu.css("display", 'block');
 })
-
-
-//typing effect
-
-// const typedTextSpan = document.querySelector(".typed-text");
-// const cursorSpan = document.querySelector(".cursor");
-
-// const textArray = ["Back-end", "Front-end"];
-// const typingDelay = 50;
-// const erasingDelay = 50;
-// const newTextDelay = 1000; // Delay between current and next text
-// let textArrayIndex = 0;
-// let charIndex = 0;
-
-// function type() {
-//   if (charIndex < textArray[textArrayIndex].length) {
-//     if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-//     typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-//     charIndex++;
-//     setTimeout(type, typingDelay);
-//   }
-//   else {
-//     cursorSpan.classList.remove("typing");
-//     setTimeout(erase, newTextDelay);
-//   }
-// }
-
-// function erase() {
-//   if (charIndex > 0) {
-//     if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-//     typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-//     charIndex--;
-//     setTimeout(erase, erasingDelay);
-//   }
-//   else {
-//     cursorSpan.classList.remove("typing");
-//     textArrayIndex++;
-//     if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-//     setTimeout(type, typingDelay + 1100);
-//   }
-// }
-
-// document.addEventListener("DOMContentLoaded", function () { // On DOM Load initiate the effect
-//   if (textArray.length) setTimeout(type, newTextDelay + 250);
-// });

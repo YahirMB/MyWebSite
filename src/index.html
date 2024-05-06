@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Experiencia y un poco de quién es Yahir" >
-    <title>My web site</title>
-    <!-- libary fontawesome -->
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" /> -->
+    <meta name="description" content="Experiencia y un poco de quién es Yahir">
+    <title>MABY's web site</title>
 
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./resources/pagina-web.ico">
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,8 +20,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Raleway:wght@100;200;300;400;500&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
-
-
 
     <!-- libraries jquery and particles -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
@@ -43,30 +38,51 @@
             <!-- <span class="typed-text"></span>
             <span class="cursor">&nbsp;</span> -->
         </h1>
-        
+
         <h1 class="name">Alexander Manjarrez</h1>
         <h5 class="phrase">"El éxito es la suma de <span class="typed-text">pequeños esfuerzos repetidos</span> día tras
             día". <span class="typed-text">Robert Collier.</span></h5>
         <!--Menu mobile-->
         <div class="menu-container-mobile">
-            <div class="btn-menu" id="btnMenu">
+            <button class="btn-menu" id="btnMenu">
                 <img src="./resources/svg/icons/clasificacion-de-barras.svg" alt="menu">
-            </div>
-
-            <div class="btn-menu" id="btnMenu-close">
-                <img src="./resources/svg/icons/x.svg" alt="menu">
-            </div>
+            </button>
 
             <nav class="menu-mobile" id="menu-mobile">
+                <button class="btn-menu" id="btnMenu-close">
+                    <img src="./resources/svg/icons/x.svg" alt="menu">
+                </button>
                 <a class="tab-mobile" href="#tab-about">ACERCA</a>
+                <a class="tab-mobile" href="#tab-experience">EXPERIENCIA</a>
                 <a class="tab-mobile" href="#tab-projects">PROYECTOS</a>
                 <a class="tab-mobile" href="#tab-tecnologies">TECNOLOGÍAS</a>
-                <a class="tab-mobile" href="#tab-experience">EXPERIENCIA</a>
                 <a class="tab-mobile" href="#tab-contact">CONTACTO</a>
                 <span class="nav-tab-slider"></span>
                 <!-- <a class="nav-tab back-start" href="#home">
                     <img src="./resources/icons/almuerzo-cohete.svg" alt="img cohete">
                 </a> -->
+                <ul class="wrapper contact-platforms-mobil">
+                    <li class="icon email">
+                        <span class="tooltip">Email</span>
+                        <a href="mailto:alexandermanjarrez18@gmail.com?subject=Solicitud de contacto&body=Hola, vi tu página de CV y quisiera contactarte"
+                            target="_blank">
+                            <img src="./resources/svg/icons/at-solid.svg" alt="icono de correo" />
+                        </a>
+                    </li>
+                    <li class="icon github">
+                        <span class="tooltip">Github</span>
+                        <a href="https://github.com/YahirMB" target="_blank">
+                            <img src="./resources/svg/icons/github.svg" alt="icono de github" />
+                        </a>
+                    </li>
+                    <li class="icon linkedin">
+                        <span class="tooltip">Linkedin</span>
+                        <a href="https://www.linkedin.com/in/yahir-alexander-manjarrez-belevin-895450201/"
+                            target="_blank">
+                            <img src="./resources/svg/icons/linkedin-in.svg" alt="icono de linkedin" />
+                        </a>
+                    </li>
+                </ul>
             </nav>
         </div>
         <!--Menu desktop-->
@@ -87,7 +103,10 @@
             <div class="grid-about-contaier">
 
                 <img class="avatar-about" src="./resources/jpg/Profile.jpg" alt="avatar">
-                <p class='text'>Hola, me llamo Yahir Alexander, tengo 21 años y me gradué de la Universidad Tecnológica de Aguascalientes en Ingeniería en Desarrollo y Gestión de Software. Disfruto programando tanto para el Back-End como para el Front-End. Soy un apasionado del aprendizaje, dedicado en mi trabajo, optimista y creativo. Además, me encantan los desafíos.
+                <p class='text'>Hola, me llamo Yahir Alexander, tengo 21 años y me gradué de la Universidad Tecnológica
+                    de Aguascalientes en Ingeniería en Desarrollo y Gestión de Software. Disfruto programando tanto para
+                    el Back-End como para el Front-End. Soy un apasionado del aprendizaje, dedicado en mi trabajo,
+                    optimista y creativo. Además, me encantan los desafíos.
                 </p>
 
             </div>
